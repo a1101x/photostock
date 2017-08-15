@@ -1,0 +1,230 @@
+{% extends "base_search_wrapped.html" %}
+
+{% block content %}
+<section class="image-details-section ">
+    <div class="container">
+        <div class="row">
+            <div class="image-details-block">
+                <!-- INFO -->
+                <div class="image-detail-information">
+                    <div class="image-profile">
+                        <div class="row">
+                            <div class="col-lg-5 col-md-5 col col-sm-6 col-xs-12 image-preview">
+                                <img src="{{ g.image.thumb_url }}"/>
+                                <div class="share-lightbox">
+                                    <!--<input type="submit" class="red-button" value="Download">-->
+                                    <div class="lightbox-dropdown">
+                                        <a class="light-box"><span><i class="fa fa-2x fa-lightbulb-o"></i>{{_("Save to a Lightbox") }}</span></a>
+                                        <div class="lightbox-dropdown-form">
+                                            <div class="light-box-header">
+                                                <p><i class="fa fa-2x fa-lightbulb-o"></i>{{ _("Save to a Lightbox") }}</p>
+                                                <span class="fa fa-times boxclose"></span>
+                                            </div>
+                                            {% if not g.user.is_anonymous %}
+                                            <div class="already-logged-in">
+                                                <ul class="lightboxes-list">
+                                                    {% for lightbox in  g.lightboxes %}
+                                                        <li>
+                                                        <a href="javascript:void(0)" data-lightbox_id="{{ lightbox.lightBoxId }}">{{ lightbox.title }}</a>
+                                                        </li>
+                                                    {% endfor %}
+                                                </ul>
+                                                <div class="add-lightbox">
+                                                    {{ lightbox_form.title(placeholder=_("New Lightbox")) }}
+                                                    {{ lightbox_form.lightbox_btn(placeholder=_("Save")) }}
+                                                </div>
+                                            </div>
+                                            {% else %}
+                                            <div class="not-looged-in">
+                                                <p>{{ _("Please Login...") }}</p>
+                                                <p>{{ _("To organize photos in lightboxes you must first register or login. Registration is Free!  Lightbox allow you to categorize groups of photos and send them to your friends or colleagues") }}</p>
+                                                <div class="logged-in-links">
+                                                    <a href="{{ url_for('UserView:login', lang_code=g.current_lang, next=url_for("ImageDetailsView:get", lang_code=g.current_lang, token=g.image.token)) }}">{{ _("Sign In &gt;") }}</a>
+                                                    <a href="{{ url_for('UserView:registration', lang_code=g.current_lang, next=url_for("ImageDetailsView:get", lang_code=g.current_lang, token=g.image.token)) }}">{{ _("Create an account &gt;") }}</a>
+                                                </div>
+                                            </div>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="image-details col-lg-4 col-md-4  col-sm-4 col-xs-6">
+
+                                <p class="image-name">{{ g.image.title }}</p>
+                                <ul>
+                                    <li>{{ _("Image ID") }}: <span>{{ g.image.token }}</span></li>
+                                    <li>{{ _("Author") }}: <span><a href="{{ url_for("SearchView:search_results", lang_code=g.current_lang, author=g.image.userName) }}">{{ g.image.userFullName }}</a></span></li>
+                                    {% if g.image.buyers %}
+                                        <li>{{ _("Copyrights owners") }}:
+                                        {% for owner in g.image.buyers%}
+                                        <span><a href="{{ url_for("SearchView:search_results", lang_code=g.current_lang, author=owner.id) }}">{{ owner.fullName }}</a></span>{% if loop.index != g.image.buyers|length %}<span>,</span>{% endif %}
+                                        {% endfor %}
+                                        </li>
+                                    {% endif %}
+                                    <li>{{ _("Keywords") }}:
+                                    {% if g.image.tags %}
+                                        {% for tag in g.image.tags %}
+                                        <span><a href="{{ url_for("SearchView:search_results", lang_code=g.current_lang, keyword=tag) }}">{{tag}}</a></span>{% if loop.index != g.image.tags|length %}<span>,</span>{% endif %}
+                                        {% endfor %}
+                                    {% endif %}
+                                    </li>
+                                    <li>{{ _("Published") }}: <span>{{ g.image.published}}</span></li>
+                                    {% if g.image.downloadCount %}<li>{{ _("Downloads") }}: <span>{{ g.image.downloadCount }}</span></li>{% endif %}
+                                </ul>
+                                <div class="download-lightbox">
+                                    {% if g.is_free %}
+                                    <a href="{{ g.image.download_url }}" id="download_btn" class="red-button red-download download_btn">
+                                    <i class="fa fa-download"></i>{{ _("Download") }}</a>
+                                    {% else %}
+                                    <a href="{% if g.download_verify %}{{ g.image.download_url }}{% else %}
+                                    {{ url_for("PricingView:index", lang_code=g.current_lang) }}{% endif %}" id="download_btn" class="red-button red-download download_btn">
+                                    <i class="fa fa-download"></i>{% if g.current_plan and g.alreadyBought %}{{ _("Download") }}{% else %}{{ _("Buy") }}{% endif %}</a>
+                                    {% endif %}
+                                </div>
+                                <div class="share-lightbox mobile">
+                                    <!--<input type="submit" class="red-button" value="Download">-->
+                                    <div class="lightbox-dropdown">
+                                        <a class="light-box"><span><i class="fa fa-2x fa-lightbulb-o"></i>{{_("Save to a Lightbox") }}<i class="fa fa-caret-down"></i></span></a>
+                                        <div class="lightbox-dropdown-form">
+                                            <div class="light-box-header">
+                                                <p><i class="fa fa-2x fa-lightbulb-o"></i>{{ _("Save to a Lightbox") }}</p>
+                                                <span class="fa fa-times boxclose"></span>
+                                            </div>
+                                            {% if not g.user.is_anonymous %}
+                                            <div class="already-logged-in">
+                                                <ul class="lightboxes-list">
+                                                    {% for lightbox in  g.lightboxes %}
+                                                        <li>
+                                                        <a href="javascript:void(0)" data-lightbox_id="{{ lightbox.lightBoxId }}">{{ lightbox.title }}</a>
+                                                        </li>
+                                                    {% endfor %}
+                                                </ul>
+                                                <div class="add-lightbox">
+                                                    {{ lightbox_form.title(placeholder=_("New Lightbox")) }}
+                                                    {{ lightbox_form.lightbox_btn(placeholder=_("Save")) }}
+                                                </div>
+                                            </div>
+                                            {% else %}
+                                            <div class="not-looged-in">
+                                                <p>{{ _("Please Login...") }}</p>
+                                                <p>{{ _("To organize photos in lightboxes you must first register or login. Registration is Free!  Lightbox allow you to categorize groups of photos and send them to your friends or colleagues") }}</p>
+                                                <div class="logged-in-links">
+                                                    <a href="{{ url_for('UserView:login', lang_code=g.current_lang, next=url_for("ImageDetailsView:get", lang_code=g.current_lang, token=g.image.token)) }}">{{ _("Sign In &gt;") }}</a>
+                                                    <a href="{{ url_for('UserView:registration', lang_code=g.current_lang, next=url_for("ImageDetailsView:get", lang_code=g.current_lang, token=g.image.token)) }}">{{ _("Create an account &gt;") }}</a>
+                                                </div>
+                                            </div>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="lightbox-dropdown share-dropdown">
+                                        <a class="light-box share-box"><i class="fa fa-share-alt"></i>{{ _("Share") }}<i class="fa fa-caret-down"></i></a>
+                                        <div class="share-list ">
+                                            <ul>
+                                                <li><i class="fa fa-facebook-official"></i>{{ _("Facebook") }}</li>
+                                                <li><i class="fa fa-twitter"></i>{{ _("Twitter") }}</li>
+                                                <li><i class="fa fa-envelope"></i>{{ _("Email") }}</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                            <div class="author-profile col-lg-3 col-md-3 col-sm-2 col-xs-6">
+                                <div>
+                                    <div class="author-avatar-name">
+                                        <div class="avatar">
+                                            <a href="#">
+                                                <img src="{{ url_for('.static', filename='assets/img/image-profile/avatar.png') }}" alt=""/>
+                                            </a>
+                                        </div>
+                                        <div class="name">
+                                            <p>{{ g.profile.fullName }}</p>
+                                            <p>{{ _("Photographer") }}</p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <ul class="profile-block">
+                                        <li><i class="fa fa-picture-o"></i>{{ g.profile.imageCount }} {{ _("photos") }}</li>
+                                        {% if g.profile.country %}<li><i class="fa fa-globe"></i>{{ g.profile.country }}</li>{% endif %}
+                                        {% if g.profile.registered %}<li><i class="fa fa-calendar"></i>{{ _("Member since") }} {{ g.profile.registered }}</li>{% endif %}
+                                    </ul>
+                                    {% if g.profile.styles %}
+                                    <div class="profile-block">
+                                        <p>{{ _("Styles") }}</p>
+                                        <p> {% for style  in g.profile.styles %}
+                                        <a href="{{ url_for("SearchView:search_results", lang_code=g.current_lang, keyword=style) }}">{{ style }}</a>{% if loop.index != g.profile.styles|length %},{% endif %}
+                                        {% endfor %}</p>
+                                    </div>
+                                    {% endif %}
+                                    {% if g.profile.equipment %}
+                                    <div class="profile-block">
+                                        <p>{{ _("Equipment") }}</p>
+                                        <p>{{ g.profile.equipment }}</p>
+                                    </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% if g.image.same_artists %}
+                        <div class="similar-same-artist">
+                            <div class="similar-same-header">
+                                <span>{{ _("Same Artist") }}</span>
+                                <a href="{{ url_for("SearchView:search_results", lang_code=g.current_lang, author=g.image.userName) }}">{{ _("See all") }}</a>
+                            </div>
+                            <div class="tab-content">
+                                {% for same_artist in g.image.same_artists %}
+                                <div class="image-preview-title col-lg-1 col-md-2 col-sm-3 col-xs-6">
+                                    <div class="square">
+                                        <a href="{{ url_for('ImageDetailsView:get', lang_code=g.current_lang, token=same_artist.token) }}">
+                                            <img src="{{ same_artist.thumb_url }}" alt=""/>
+                                        </a>
+                                    </div>
+                                    <p>{{ same_artist.title }}</p>
+                                </div>
+                                {% endfor %}
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    {% endif %}
+
+                    {% if g.image.similar_images %}
+                        <div class="similar-same-artist">
+                            <div class="similar-same-header">
+                                <span>{{ _("Similar Images") }}</span>
+                                <a href="{{ url_for("SearchView:search_results", lang_code=g.current_lang, similar=g.image.token) }}">See all</a>
+                            </div>
+                            <div class="tab-content">
+                                {% for similar_images in g.image.similar_images %}
+                                <div class="image-preview-title col-lg-1 col-md-2 col-sm-3 col-xs-6">
+                                    <div class="square">
+                                        <a href="{{ url_for('ImageDetailsView:get', lang_code=g.current_lang, token=similar_images.token) }}">
+                                            <img src="{{ similar_images.thumb_url }}" alt=""/>
+                                        </a>
+                                    </div>
+                                    <p>{{ similar_images.title }}</p>
+                                </div>
+                                {% endfor %}
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    {% endif %}
+                    <!-- INFO -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
+
+{% block scripts_under_content %}
+    <script type="text/javascript" charset="utf-8">
+        var current_lang = '{{ g.current_lang }}';
+        var token = '{{ g.image.token }}';
+    </script>
+    <script src="{{ url_for(".static", filename="assets/plugins/auto-complete/auto-complete.min.js") }}"></script>
+    <script src="{{ url_for(".static", filename="assets/js/autocomplete.js") }}"></script>
+    <script src="{{ url_for(".static", filename="assets/js/lightbox.js") }}"></script>
+{% endblock %}
+

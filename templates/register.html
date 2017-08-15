@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% from "macros/field_errors.html" import field_errors %}
+
+    <section class="create-account-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-2">
+                    <div class="col-lg-5 col-md-5  col-sm-12 create-account-form">
+                        <h2 class="section-heading">{{_("Create your account.") }}</h2>
+
+                        <form data-toggle="validator" role="form" data-focus="false" data-disable="false" action="{{ url_for("UserView:registration", lang_code=g.current_lang, next="/") }}" method="POST">
+                            {{ register_form.csrf_token }}
+                            <div class="form-group{% if register_form.username.errors %} has-error{% endif %}">
+                                {{ register_form.username.label(class_="control-label") }}
+                                {{ register_form.username(class_="form-control", required=True) }}
+                                {{ field_errors(register_form.username.errors) }}
+                            </div>
+
+                            <div class="form-group{% if register_form.email.errors %} has-error{% endif %}">
+                                {{ register_form.email.label(class_="control-label") }}
+                                {{ register_form.email(class_="form-control", required=True) }}
+                                {{ field_errors(register_form.email.errors) }}
+                            </div>
+                            <div class="form-group{% if register_form.password.errors %} has-error{% endif %}">
+                                {{ register_form.password.label(class_="control-label") }}
+                                {{ register_form.password(class_="form-control", required=True, data_minlength="6") }}
+                                {{ field_errors(register_form.password.errors) }}
+                            </div>
+                            <div class="form-group">
+                                {{ register_form.password_confirm.label(class_="control-label") }}
+                                {{ register_form.password_confirm(class_="form-control", required=True, data_match="#password") }}
+                                {{ field_errors(register_form.password_confirm.errors) }}
+                            </div>
+                            <div class="form-group">
+                                <div class="checkbox">
+                                    <label for="terms" class="agree-text">
+                                        <input type="checkbox" id="terms" data-error="{{ _( "Before you wreck yourself") }}" required>
+                                        {{ _("I agree to photostock's")}} <a href="{{ url_for("TermsOfUseView:index", lang_code=g.current_lang) }}">{{ _("Website Terms of Use") }}</a> {{ _(",")}}
+                                        <a href="{{ url_for("PrivacyPolicyView:index", lang_code=g.current_lang) }}">{{ _("Privacy Policy") }}</a> {{ _("to receive emails that I can opt out of at any time.")}}                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                {{ register_form.register_btn(class_="btn btn-primary red-button") }}
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-lg-6 col-md-5 col-lg-offset-1 col-md-offset-1 col-sm-12 sign-in-form">
+                        <h2 class="section-heading">{{ _("Already have an account?") }}</h2>
+
+                        <form data-toggle="validator" role="form" data-focus="false" data-disable="false" action="{{ url_for("UserView:registration", lang_code=g.current_lang, next="/") }}" method="POST">
+                            {{ login_form.csrf_token }}
+                            <div class="form-group{% if login_form.email.errors %} has-error{% endif %}">
+                                {{ login_form.email.label(class_="control-label", for="l_email") }}
+                                {{ login_form.email(class_="form-control", id="l_email", required=True) }}
+                                {{ field_errors(login_form.email.errors) }}
+                            </div>
+                            <div class="form-group{% if login_form.password.errors %} has-error{% endif %}">
+                                {{ login_form.password.label(class_="control-label", for="l_password") }}
+                                {{ login_form.password(class_="form-control", id="l_password", required=True, data_minlength="6") }}
+                                {{ field_errors(login_form.password.errors) }}
+                            </div>
+                            {{ login_form.login_btn(class_="btn btn-primary") }}
+                            <a href="{{ url_for("UserView:recover", lang_code=g.current_lang) }}">{{ _("Forgot your password?") }}</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock content %}
+{% block scripts_under_content %}
+    <script src="{{ url_for(".static", filename="assets/plugins/validator/validator.min.js") }}"></script>
+{% endblock scripts_under_content %}

@@ -1,0 +1,122 @@
+.sign-in-dropdown {
+    z-index: 1;
+    background-color: #f0f0f0;
+    height: auto;
+    width: 300px;
+    display: none;
+    right: 0;
+    top: 62px;
+    position: absolute;
+    border: 1px solid #c7d1d2;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 6px 10px -1px rgba(0, 0, 0, 0.54);
+    -moz-box-shadow: 0px 6px 10px -1px rgba(0, 0, 0, 0.54);
+    box-shadow: 0px 6px 10px -1px rgba(0, 0, 0, 0.54);
+}
+
+.sign-in-dropdown:after, .sign-in-dropdown:before {
+    bottom: 100%;
+    right: 18px;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.sign-in-dropdown:after {
+    border-color: rgba(240, 240, 240, 0);
+    border-bottom-color: #f0f0f0;
+    border-width: 16px;
+    margin-left: -16px;
+}
+
+.sign-in-dropdown:before {
+    border-color: rgba(204, 204, 202, 0);
+    border-bottom-color: #ccccca;
+    border-width: 11px;
+    margin-left: -11px;
+}
+
+.sign-in-dropdown .sign-in-form h2, .sign-in-dropdown .sign-in-form label {
+    display: none;
+}
+
+.sign-in-dropdown .sign-in-form {
+    padding: 8px 20px 13px;
+}
+
+.sign-in-dropdown .sign-in-form form .form-group {
+    margin-top: 16px;
+}
+
+.sign-in-dropdown .sign-in-form form .form-group input {
+    padding-left: 6px;
+    border-radius: 0;
+    height: 30px;
+}
+
+.sign-in-dropdown .sign-in-form .has-error .form-control {
+    border-color: #a94442 !important;
+}
+
+.sign-in-dropdown .sign-in-form form button {
+    font-size: 13px;
+    margin-top: 1px;
+    width: 73px;
+    height: 29px;
+}
+
+.sign-in-dropdown .sign-in-form .red-button {
+    margin-top: 3px;
+    height: 28px;
+    padding: 8px 14px;
+    font-size: 13px;
+    float: left;
+    margin-bottom: 0px;
+}
+
+.sign-in-dropdown .sign-in-form a {
+    font-family: 'Helvetica Neue Medium', Arial, sans-serif;
+    padding: 7px 0 0 4px;
+    color: #776768;
+    font-weight: 400;
+    white-space: nowrap;
+    margin-right: 0px;
+    margin-left: 6px;
+    font-size: 12px;
+}
+
+.sign-in-dropdown .register-links {
+    display: none;
+}
+
+.sign-in-dropdown .register-or-create {
+    margin-top: 0px;
+    padding: 10px 20px;
+    line-height: 10px;
+    border-top: 1px solid #dbdbdb;
+}
+
+.sign-in-dropdown .register-or-create p, .sign-in-dropdown .register-or-create a {
+    font-family: 'Helvetica Neue Light', Arial, sans-serif;
+    font-size: 12px;
+    margin: 0;
+}
+
+.sign-in-dropdown .register-or-create p:first-child {
+    color: #333331;
+    font-weight: 700;
+}
+
+.sign-in-dropdown .register-or-create a {
+    color: #008aaf;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .sign-in-dropdown {
+        display: none !important;
+    }
+}

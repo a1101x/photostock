@@ -1,0 +1,83 @@
+{% extends "base_search_wrapped.html" %}
+
+{% block content %}
+<section class="lightboxes-section download-section">
+    <div class="lightboxes-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row section-heading search-results-section">
+                        <div class="col-lg-6 col-md-6 col-xs-6"><h2>{{ _("Download History") }}</h2></div>
+                        <div class="pagination-pages  col-lg-6 col-md-6 col-xs-6">
+
+                            <div class="float-right">
+                            <span>{{ _("Page") }}</span>
+                                <form action="{{ url_for('DownloadHistoryView:index', lang_code=g.current_lang, license_type=g.license_type, year=g.year) }}" method="post">
+                                    {{ paginator_form.csrf_token }}
+                                    {{ paginator_form.page }}
+                                    {{ paginator_form.paginator_btn(type="hidden") }}
+                                </form>
+                                <span> of {{ g.paginator.pages_amount }}</span>
+                                {% if g.paginator.page_prev %}
+                                    <a class="fa fa-chevron-left" href="{{ url_for('DownloadHistoryView:index', lang_code=g.current_lang, page=g.paginator.page_prev, license_type=g.license_type, year=g.year) }}"></a>
+                                {% else %}
+                                    <a class="fa fa-chevron-left empty" href="javascript:void(0)"></a>
+                                {% endif %}
+                                {% if g.paginator.page_next %}
+                                    <a class="fa fa-chevron-right" href="{{ url_for('DownloadHistoryView:index', lang_code=g.current_lang, page=g.paginator.page_next, license_type=g.license_type, year=g.year) }}"></a>
+                                {% else %}
+                                    <a class="fa fa-chevron-right empty" href="javascript:void(0)"></a>
+                                {% endif %}
+                            </div>
+                            <div class="float-right">
+                                <select class="filter_select">
+                                    <option selected disabled>{{ _("License Type") }}</option>
+                                    <option value="PROFESSIONAL" data-href="{{ url_for('DownloadHistoryView:index', lang_code=g.current_lang, license_type='professional', year=g.year) }}">{{ _("Professional") }}</option>
+                                    <option value="BASIC" data-href="{{ url_for('DownloadHistoryView:index', lang_code=g.current_lang, license_type='basic', year=g.year) }}">{{ _("Basic") }}</option>
+                                </select>
+                                 <select  class="filter_select">
+                                    <option selected disabled hidden>{{ _("Year") }}</option>
+                                     {% for year in g.years %}
+                                        <option value="{{ year }}" data-href="{{ url_for('DownloadHistoryView:index', lang_code=g.current_lang, license_type=g.license_type, year=year) }}">{{ year }}</option>
+                                     {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    {% for item in g.img_list %}
+                        <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6  lightboxes-prev">
+                            <div class="square">
+                                <a href="{{ url_for("ImageDetailsView:get", lang_code=g.current_lang, token=item.imageToken) }}">
+                                    <img src="{{ item.thumb_url }}" alt=""/>
+                                </a>
+                            </div>
+                            <b>{{ item.title }}</b>
+                            <p>{{ item.downloadedAt | date_simple }}</p>
+                            <p>{{ g.licenses[item.licenseType or 'BASIC'] }}</p>
+                            {% if item.download_url %}
+                                <a href="{{ item.download_url }}" class="red-button">{{ _("Redownload") }}</a>
+                            {% endif %}
+                        </div>
+                        {% if loop.index % 6 == 0 %}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 main-content">
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
+
+{% block scripts_under_content %}
+    <script type="text/javascript" charset="utf-8">
+        var current_lang = '{{ g.current_lang }}';
+    </script>
+    <script src="{{ url_for(".static", filename="assets/plugins/auto-complete/auto-complete.min.js") }}"></script>
+    <script src="{{ url_for(".static", filename="assets/js/autocomplete.js") }}"></script>
+    <script src="{{ url_for(".static", filename="assets/plugins/jQueryFormStyler-master/jquery.formstyler.min.js") }}"></script>
+    <script src="{{ url_for(".static", filename="assets/js/download-history.js") }}"></script>
+{% endblock %}

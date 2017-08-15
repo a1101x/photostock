@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="pricing-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1">
+                <div class="pricing-block">
+                    <div class="pricing-header">
+                        <h1>{{ _("Amazing Royalty-Free Images. Simple Pricing.") }}</h1>
+
+                        {% if g.user.is_anonymous %}
+                        <div class="free-account">
+                            <h3>{{ _("Free Browse Account") }}</h3>
+
+                            <p>{{ _("Search our collection of over 70 million images. Create and share unlimited lightboxes.") }}</p>
+                            <a href="{{ url_for('UserView:registration', lang_code=g.current_lang) }}" class="grey-button">{{ _("Start for Free") }}</a>
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="pricing-plans">
+                        <div class="col-lg-2 col-md-2 hidden-sm hidden-xs"></div>
+                        <div class="basic-plan col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="pricing-plan">
+                                <div class="plan-header">{{ _("Basic") }}</div>
+                                <div class="plan-info">
+                                    <p>{{ _("Image Packs") }}</p>
+
+                                    <form action="{{ url_for('PricingView:index', lang_code=g.current_lang) }}" method="post" id="basic_plan">
+                                        <input type="hidden" name="license_type" value="basic"/>
+                                        <ul>
+                                            <li>
+                                                <input type="radio" id="f-option-25" checked="checked" name="count" value="5">
+                                                <label for="f-option-25">5 {{ _("Images") }} <span>&euro;25</span></label>
+
+                                                <div class="check"></div>
+                                            </li>
+                                            <li>
+                                                <input type="radio" id="t-option-25" name="count" value="25">
+                                                <label for="t-option-25">25 {{ _("Images") }} <span>&euro;100</span></label>
+
+                                                <div class="check">
+                                                    <div class="inside"></div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        {% if 'BASIC' in g.plans %}
+                                            <input type="button" class="grey-button" value="{{ _("You have this plan") }}">
+                                            {% else %}
+                                            <input class="red-button" type="submit" value="{{ _('Buy Now') }}" />
+                                        {% endif %}
+                                        <p class="terms-of-use">{{ _("Images must be downloaded within one year of purchase") }}</p>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="professional-plan col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
+                            <div class="pricing-plan">
+                                <div class="plan-header">{{ _("Professional License") }}</div>
+                                <div class="plan-info">
+                                    <p>{{ _("Get access to our entire collection with no daily download limits.") }}</p>
+                                    <ul class="nav nav-tabs">
+                                        <li><a data-toggle="tab" data-value="year" href="#home">1 {{ _("Year") }}</a></li>
+                                        <li class="active"><a data-toggle="tab" data-value="month" href="#menu1">1 {{ _("Month") }}</a></li>
+                                    </ul>
+
+                                    <div class="tab-content">
+                                        <div id="home" class="tab-pane fade ">
+                                            <p>{{ _("Images Per Year") }}</p>
+
+                                            <form action="{{ url_for('PricingView:index', lang_code=g.current_lang) }}" method="post" id="pro_plan_year">
+                                                <input type="hidden" name="license_type" value="professional"/>
+                                                <input type="hidden" name="duration" value="year"/>
+                                                <ul>
+                                                    <li>
+                                                        <input type="radio" id="year-option1" name="count" value="100" checked="checked">
+                                                        <label for="year-option1">100 {{ _("images") }} <span><b>&euro;1200</b> /{{ _("year") }}</span>
+                                                        </label>
+                                                        <div class="check"></div>
+                                                    </li>
+
+                                                    <li>
+                                                        <input type="radio" id="year-option2" name="count" value="50">
+                                                        <label for="year-option2">50 {{ _("images") }} <span><b>&euro;900</b> /{{ _("year") }}</span></label>
+                                                        <div class="check">
+                                                            <div class="inside"></div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+
+                                                {% if 'PROFESSIONAL' in g.plans %}
+                                                    <input type="button" class="grey-button" value="{{ _("You have this plan") }}">
+                                                    {% else %}
+                                                    <input type="submit" class="red-button" value="{{ _("Buy Now") }}">
+                                                {% endif %}
+                                            </form>
+                                        </div>
+                                        <div id="menu1" class="tab-pane fade in active">
+                                            <p>{{ _("Images Per Month") }}</p>
+                                            <form action="{{ url_for('PricingView:index', lang_code=g.current_lang) }}" method="post" id="pro_plan_month">
+                                                <input type="hidden" name="license_type" value="professional"/>
+                                                <input type="hidden" name="duration" value="month"/>
+                                                <ul>
+                                                    <li>
+                                                        <input type="radio" id="month-option1" name="count" value="100" checked="checked">
+                                                        <label for="month-option1">100 {{ _("images") }} <span><b>&euro;150</b> /{{ _("month") }}</span>
+                                                        </label>
+                                                        <div class="check"></div>
+                                                    </li>
+
+                                                    <li>
+                                                        <input type="radio" id="month-option2" name="count" value="50">
+                                                        <label for="month-option2">50 {{ _("images") }} <span><b>&euro;100</b> /{{ _("month") }}</span></label>
+                                                        <div class="check">
+                                                            <div class="inside"></div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                {% if 'PROFESSIONAL' in g.plans %}
+                                                    <input type="button" class="grey-button" value="{{ _("You have this plan") }}">
+                                                    {% else %}
+                                                    <input type="submit" class="red-button" value="{{ _("Buy Now") }}">
+                                                {% endif %}
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-sm-2 hidden-sm hidden-xs"></div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

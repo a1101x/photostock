@@ -1,0 +1,217 @@
+{% extends "base_profile.html" %}
+
+{% block content %}
+<div class="profile-earning">
+    <table>
+        <col width="20%">
+        <col width="60%">
+        <col width="20%">
+        <tr>
+            <td>
+                {{ _("Earnings") }}
+            </td>
+            <td class="earnings-summ">
+                {{ _("Grand total") }}: &euro; {{ g.grand_total }} |
+                {{ _("Still to cash in") }}: &euro; {{ g.still_to_cash }}
+            </td>
+            <td>
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle red-button" type="button" data-toggle="dropdown">{{ _("Withdraw money") }}</button>
+                    <ul class="dropdown-menu">
+                        <li><a data-toggle="modal" href="#paymentPopUp">Via Neteller</a></li>
+                        <li><a data-toggle="modal" href="#paymentBankPopUp">Via Bank</a></li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <div class="earnings_tabs">
+        <ul class="nav nav-tabs col-lg-12  col-md-12">
+            <li {% if request.args.tabs == 'app' %}class="active"{% endif %}><a href="{{ url_for('ProfileView:earnings', lang_code=g.current_lang, tabs='app') }}">{{ _("From photostock App (Rights)") }}</a></li>
+            <li {% if request.args.tabs == 'web' %}class="active"{% endif %}><a href="{{ url_for('ProfileView:earnings', lang_code=g.current_lang, tabs='web') }}">{{ _("From photostock Stock (Royalties)") }}</a></li>
+        </ul>
+        <div class="clearfix"></div>
+    </div>
+    <div class="">
+        <div class="row">
+            {% if g.tab == 'web' %}
+                {% for item in g.earnings %}
+                    <div class="same-block  col-md-2 col-sm-4 col-xs-6 lightboxes-prev">
+                        <div class="square">
+                            <img src="{{ item.uploadId | thumb_url }}" data-token="{{ item.token }}">
+                        </div>
+                        <b>{{ _("Downloads") }}: {{ item.downloadCount }}</b>
+                        {% if item.earn %}
+                        <p>{{ _("Amount") }}: &euro;{{ item.earn }}</p>
+                        {% endif %}
+                        <p>{{ _("Fee") }}: 25%</p>
+                        {% if item.earn %}
+                        <p>{{ _("Total amount") }}: &euro;{{ item.earned_total }}</p>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            {% else %}
+                {% for item in g.earnings %}
+                    <div class="same-block  col-md-2 col-sm-4 col-xs-6 lightboxes-prev">
+                        <div class="square">
+                            <img src="{{ item.uploadId | thumb_url }}" data-token="{{ item.token }}" data-price="{{ item.price }}">
+                        </div>
+                        <b>{{ _("Shares sold") }}: {{ item.buyers_count }} of 2</b>
+                        <p>{{ _("Total value") }}: &euro;{{ item.price }}</p>
+                        <p>{{ _("Amount") }}: &euro;{{ item.earnings*item.buyers_count }}</p>
+                        <p>{{ _("Fee") }}: 25%</p>
+                        <p>{{ _("Total amount") }}: &euro;{{ (item.earnings*item.buyers_count)*0.75 }}</p>
+                    </div>
+                {% endfor %}
+            {% endif %}
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+    <div class="pagination-buttons">
+        {% if g.paginator.page_prev %}
+        <a class="next-page grey-button"
+            href="{{ url_for('ProfileView:earnings', lang_code=g.current_lang, page=g.paginator.page_prev, tabs=g.tab) }}">&lt; {{ _("Previous Page") }}</a>
+        {% endif %}
+        {% if g.paginator.page_next %}
+        <a class="next-page grey-button"
+            href="{{ url_for('ProfileView:earnings', lang_code=g.current_lang, page=g.paginator.page_next, tabs=g.tab) }}">{{ _("Next Page") }} &gt;</a>
+        {% endif %}
+    </div>
+</div>
+
+<div class="modal fade" id="paymentPopUp" role='dialog'>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <p><h4 class="modal-title">{{ _("SUMMARY") }}</h4></p>
+                <p>{{ _("Withdraw sum") }}: <input id="input-earn" class="form-control input-earnings"><br/>
+                {{ _("Downloads") }}: &euro; {{ g.profit.licenseValue }}<br/>
+                {{ _("Rights") }}: &euro; {{ g.profit.value }}<br/>
+                {{ _("Fee") }}: 25%<br/>
+                {{ _("Total to pay") }}: &euro; <label id="total_to_pay">{{ g.still_to_cash }}</label><br/></p>
+            </div>
+            <div class="modal-body">
+                <p><strong>{{ _("Pay") }}: &euro; <label id="total-earn" class="total-earn" name="total-earn">{{ g.still_to_cash }}</label></strong></p>
+                {% if g.neteller_acc.emailAddress %}
+                <p>{{ _("Confirm the payment on the Neteller Account") }}: {{ g.neteller_acc.emailAddress }}?</p>
+                <a href="{{ url_for("ProfileView:change_neteller_account", lang_code=g.current_lang) }}">{{ _("Change your Neteller Account.") }}</a>
+                {% else %}
+                <p class="p-earnings-red">{{ _("Please, change your Neteller Account.") }}</p>
+                <a href="{{ url_for("ProfileView:change_neteller_account", lang_code=g.current_lang) }}">{{ _("Change your Neteller Account.") }}</a>
+                {% endif %}
+            </div>
+            <div class="modal-footer">
+                <button type="buttom" id="submit_btn" class="btn btn-primary red-button">{{ _("Confirm") }}</button>
+                <button type="button" class="btn btn-primary grey-button" data-dismiss="modal">{{ _("Cancel") }}</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade" id="paymentBankPopUp" role='dialog'>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <p><h4 class="modal-title">{{ _("SUMMARY") }}</h4></p>
+                <p>{{ _("Withdraw sum") }}: <input id="input-earn-bank" class="form-control input-earnings"><br/>
+                {{ _("Downloads") }}: &euro; {{ g.profit.licenseValue }}<br/>
+                {{ _("Rights") }}: &euro; {{ g.profit.value }}<br/>
+                {{ _("Fee") }}: 25%<br/>
+                {{ _("Total to pay") }}: &euro; {{ g.still_to_cash }}<br/></p>
+            </div>
+            <div class="modal-body">
+                <p><strong>{{ _("Pay") }}: &euro; <label id="total-earn-bank" name="total-earn-bank">{{ g.still_to_cash }}</label></strong></p>
+                <a href="{{ url_for("ProfileView:change_bank_account", lang_code=g.current_lang) }}">{{ _("Change your Bank Account.") }}</a>
+            </div>
+            <div class="modal-footer">
+                <button type="buttom" id="submit_bank_btn" class="btn btn-primary red-button">{{ _("Confirm") }}</button>
+                <button type="button" class="btn btn-primary grey-button" data-dismiss="modal">{{ _("Cancel") }}</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<script id="details-template" type="text/x-handlebars-template">
+{% raw %}
+<div class="result-info earnings-info-dropdown">
+    <div class="info-arrow" style="left: 596.5px;"></div>
+    <a class="description-close"></a>
+    <div class="">
+        <div class="result-info-block">
+            <div class="image-profile">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-6 image-preview">
+                        <img class="object-fit-contain"
+                        src="{{thumb_url}}"
+                        alt=""/>
+                    </div>
+                    <div class="image-details col-lg-6 col-sm-6">
+                        <p class="image-name"> {{title}} </p>
+                        <ul>
+                            <li>{% endraw %}{{ _("Image Id") }}{% raw %}: <span>{{token}}</span></li>
+                            <li>{% endraw %}{{ _("Author") }}{% raw %}:
+                                <span><a href="/{% endraw %}{{ g.current_lang }}{% raw %}/search/?author={{userName}}">{{userFullName}}</a></span>
+                            </li>
+                            <li>{% endraw %}{{ _("Copyrights owners") }}{% raw %}:
+                                {{#each buyers}}<span><a href="/{% endraw %}{{ g.current_lang }}{% raw %}/search/?author={{id}}">{{fullName}} </a></span><span class="comma">,</span> {{/each}}
+                            </li>
+                            <li>{% endraw %}{{ _("Keywords") }}{% raw %}:
+                                {{#each tags}}
+                                    <span><a href=" {% endraw %}{{ url_for('SearchView:search_results', lang_code=g.current_lang) }}{% raw %}?keyword={{this}}">{{this}}</a></span><span class="comma">,</span>
+                                {{/each}}
+                            </li>
+                            <li>{% endraw %}{{ _("Published") }}{% raw %}: <span>{{published}}</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endraw %}
+</script>
+{% endblock content %}
+
+{% block paginator %}
+    {% if g.earnings %}
+    <div class="buttom-tabs-pagintaion ">
+        <div class="pagination-pages">
+            <span>{{ _("Page") }}</span>
+            <form action="{{ url_for('ProfileView:earnings', lang_code=g.current_lang, tabs=g.tab) }}" method="post">
+                {{ paginator_form.csrf_token }}
+                {{ paginator_form.page }}
+                {{ paginator_form.paginator_btn(type="hidden") }}
+            </form>
+            <span> of {{ g.paginator.pages_amount }}</span>
+            {% if g.paginator.page_prev %}
+                <a class="fa fa-chevron-left" href="{{ url_for('ProfileView:earnings', lang_code=g.current_lang, page=g.paginator.page_prev, tabs=g.tab) }}"></a>
+            {% else %}
+                <a class="fa fa-chevron-left empty" href="javascript:void(0)"></a>
+            {% endif %}
+            {% if g.paginator.page_next %}
+                <a class="fa fa-chevron-right" href="{{ url_for('ProfileView:earnings', lang_code=g.current_lang, page=g.paginator.page_next, tabs=g.tab) }}"></a>
+            {% else %}
+                <a class="fa fa-chevron-right empty" href="javascript:void(0)"></a>
+            {% endif %}
+        </div>
+    </div>
+    {% endif %}
+{% endblock paginator %}
+
+{% block scripts_under_content %}
+    <script type="text/javascript" charset="utf-8">
+        var current_lang = '{{ g.current_lang }}';
+    </script>
+    <script src="{{ url_for(".static", filename="assets/plugins/handlebars/handlebars.min-latest.js") }}"></script>
+    <script src="{{ url_for(".static", filename="assets/plugins/auto-complete/auto-complete.min.js") }}"></script>
+    <script src="{{ url_for(".static", filename="assets/js/autocomplete.js") }}"></script>
+    <script src="{{ url_for(".static", filename="assets/js/earnings.js") }}"></script>
+{% endblock %}

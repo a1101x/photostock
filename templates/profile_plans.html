@@ -1,0 +1,19 @@
+{% extends "base_profile.html" %}
+
+{% block content %}
+<div class="profile-plans">
+    <h1>{{ _("Image plans") }}</h1>
+    <p class="profile-title"></p>
+    {% for item in g.plans %}
+        {% if item.type == 'BASIC' %}
+            <p>{{ _("Basic License Type") }}</p>
+        {% else %}
+            <p>{{ _("Professional License Type") }}</p>
+        {% endif %}
+        <div>{{ item.imagesLeft }} / {{ item.imagesCount }} {{ _("downloads left") }}</div>
+    {% else %}
+    <p>{{ _("You don't have an active image plan") }}</p>
+    <a href="{{ url_for("PricingView:index", lang_code=g.current_lang) }}">{{ _("View Plans & Pricing") }}</a>
+    {% endfor %}
+</div>
+{% endblock content %}

@@ -1,0 +1,41 @@
+{% extends "base_profile.html" %}
+
+{% block content %}
+<div class="purchase-history">
+    <h3>{{ _("Purchase History") }}</h3>
+    {% if g.licenses %}
+    <table>
+        <colgroup>
+            <col width="13%">
+            <col width="57%">
+            <col width="10%">
+            <col width="10%">
+        </colgroup>
+        <tr>
+            <th>{{ _("Date") }}</th>
+            <th>{{ _("Description") }}</th>
+            <th>{{ _("Total") }}</th>
+            <th>{{ _("Receipt") }}</th>
+        </tr>
+        {% for plan in g.licenses %}
+        <tr>
+            <td>{{ plan.date }}</td>
+            <td>{{ plan.description }}
+                {% if plan.expired %}
+                     - <a href="{{ plan.repurchase }}">{{ _("Repurchase Plan") }}</a>
+                {% endif %}
+            </td>
+            <td>{{ plan.total }}</td>
+            <td>{{ plan.receipt[:15] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+        <p class="profile-title"></p>
+        <p>{{ _("You don't have an active image plan") }}</p>
+        <a href="{{ url_for("PricingView:index", lang_code=g.current_lang) }}">
+            {{ _("View Plans & Pricing") }}</a>
+    {% endif %}
+</div>
+{% endblock content %}
+

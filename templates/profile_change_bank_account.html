@@ -1,0 +1,31 @@
+{% extends "base_profile.html" %}
+
+{% from "macros/field_errors.html" import field_errors %}
+
+{% block content %}
+<div class="profile-change-bank-account">
+    <h1>{{ _("Change Account where you get paid") }}</h1>
+    <p class="profile-title">{{ _("Your Bank Account") }}:</p>
+    <form data-toggle="validator" role="form" data-focus="false" data-disable="false" action="" method="post" action="{{ url_for("ProfileView:change_bank_account", lang_code=g.current_lang) }}">
+        {{ bank_form.csrf_token }}
+        {{ bank_form.is_edit(hidden=True) }}
+        <div class="form-group {% if bank_form.errors.name %}has-error has-danger{% endif %}">
+            {{ bank_form.name.label(clas_="control-label") }}
+            {{ bank_form.name(class_="form-control") }}
+            {{ field_errors(bank_form.errors.name) }}
+        </div>
+        <div class="form-group {% if bank_form.errors.iban %}has-error has-danger{% endif %}">
+            {{ bank_form.iban.label(clas_="control-label") }}
+            {{ bank_form.iban(class_="form-control", required=True) }}
+            {{ field_errors(bank_form.errors.iban) }}
+        </div>
+        <div class="form-group">
+            {{ bank_form.bank_acc_btn(class_="btn btn-primary red-button") }}
+            <button type="reset" class="btn btn-primary grey-button" onclick="history.go(-1);">{{ _("Cancel") }}</button>
+        </div>
+    </form>
+
+    <a href="{{ url_for("ProfileView:change_neteller_account", lang_code=g.current_lang) }}">{{ _("Change your Payment method to Neteller") }}</a>
+</div>
+{% endblock content %}
+

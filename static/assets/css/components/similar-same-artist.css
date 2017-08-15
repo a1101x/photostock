@@ -1,0 +1,113 @@
+
+.similar-same-artist {
+    margin-top: 27px;
+}
+
+.similar-same-artist .tab-content {
+    text-align: left;
+}
+
+.similar-same-artist .tab-content a img {
+    object-fit: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+}
+
+.similar-same-artist .tab-pane .same-block:nth-of-type(9) img {
+    opacity: 0.3;
+}
+
+.similar-same-artist .tab-pane .same-block:nth-of-type(9) .asd {
+    text-align: center;
+}
+
+.similar-same-artist .tab-pane .same-block:nth-of-type(9) .asd > a {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    color: #77bce8;
+}
+
+.similar-same-artist .tab-pane .same-block .asd > a {
+    display: none;
+}
+
+.similar-same-artist .tab-pane .same-block .asd {
+    padding: 1px;
+    margin-top: 19px;
+    margin-bottom: 10px;
+}
+
+.similar-same-artist .tab-pane .same-block:nth-of-type(9) .asd {
+    border: 1px solid #333333;
+}
+
+/*.similar-same-artist .same-block {*/
+    /*margin-bottom: 10px;*/
+/*}*/
+
+.similar-same-artist .square {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    overflow: hidden;
+}
+
+.similar-same-artist .tab-content .tab-pane > a:last-child p {
+    color: #77bce8;
+    position: absolute;
+    text-align: center;
+    top: 35px;
+    width: inherit;
+    margin: 0 auto;
+    z-index: 10;
+
+}
+
+.similar-same-artist .tab-content .tab-pane > a:last-child img {
+    left: 1px;
+    opacity: 0.3;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.similar-same-artist ul li a {
+    color: #fff;
+    border: none;
+    line-height: 0px;
+}
+
+@media (max-width: 480px) {
+    .similar-same-artist ul li:not(:last-child) {
+        border-right: none !important;
+    }
+}
+
+.similar-same-artist ul li:not(:last-child) {
+    border-right: 2px solid #666666;
+}
+
+.similar-same-artist ul li.active a,
+.similar-same-artist ul li.active a:hover,
+.similar-same-artist ul li a:hover {
+    color: #24c1f8 !important; /* WRONG ???*/
+    background-color: transparent !important;
+    border: none !important;
+}
+
+.similar-same-artist ul {
+    border-bottom: none;
+    margin-bottom: 34px;
+}
+
+@media (min-width: 992px ) {
+    .same-block {
+        width: 11.1%;
+    }
+}

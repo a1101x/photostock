@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block profile_menu %}
+    
+<section class="profile-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-3  col-sm-3 hidden-xs">
+                <h4>{{ _("Your Account ") }}<span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></h4>
+               <ul class="nav nav-tabs left-menu">
+                <li {% if request.path | get_section('/', -2) in ['profile', 'change-neteller', 'change-email', 'change-password', 'change-bank-account'] %}class="active"{% endif %}><a href="{{ url_for("ProfileView:index", lang_code=g.current_lang) }}">{{ _("Account Settings") }}</a></li>
+                <li {% if request.path | get_section('/', -2) == 'plans' %}class="active"{% endif %}><a href="{{ url_for("ProfileView:plans", lang_code=g.current_lang) }}">{{ _("Plans") }}</a></li>
+                <li {% if request.path | get_section('/', -2) == 'purchase-history' %}class="active"{% endif %}><a href="{{ url_for("ProfileView:purchase_history", lang_code=g.current_lang) }}">{{ _("Purchase History") }}</a></li>
+                <li {% if request.path | get_section('/', -2) == 'earnings' %}class="active"{% endif %}><a href="{{ url_for("ProfileView:earnings", lang_code=g.current_lang, tabs='app') }}">{{ _("Earnings") }}</a></li>
+              </ul>
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-9 static">
+                <div class="row">
+                    <div class="col-lg-12 static">
+                        <div class="tab-content">
+
+        {% endblock profile_menu %}
+
+                        {% block content %} {% endblock content %}
+
+        {% block profile_menu_bottom %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% block paginator %} {% endblock paginator %}
+</section>
+
+
+
+{% endblock profile_menu_bottom %}
+
+{% block scripts_under_content %}
+    <script src="{{ url_for(".static", filename="assets/js/profilePageCtrl.js") }}"></script>
+{% endblock %}

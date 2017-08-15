@@ -1,0 +1,30 @@
+.create-account-form .agree-text {
+    position: relative;
+    text-indent: 18px;
+    font-size: 12px;
+    line-height: 16px;
+    padding: 0;
+    cursor: default;
+}
+
+.agree-text input[type="checkbox"] {
+    position: absolute;
+    top: 3px;
+    margin-top: 0px;
+    left: 0px;
+    margin-right: 2px;
+    display: inline;
+    margin-left: 0;
+}
+.create-account-form .checkbox {
+    margin-top: 12px;
+    padding-left: 4px;
+}
+.create-account-form form input[type="text"], .create-account-form form input[type="password"], .create-account-form form input[type="email"] {
+    border-radius: 0;
+    height: 28px;
+}
+
+.create-account-form a {
+    color: #5069ac;
+}

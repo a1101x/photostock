@@ -1,0 +1,42 @@
+{% extends "base_profile.html" %}
+
+{% block content %}
+<div class="order-summary-section">
+    <h1>{{ _("Change Your Card Settings") }}</h1>
+    <div class="payment">
+        <form data-toggle="validator" role="form" data-focus="false" data-disable="false" class="col-lg-7 col-md-7" method="post" action="{{ url_for("OrderView:index", lang_code=g.current_lang) }}">
+            {{ order_form.csrf_token }}
+            <!--<input type="text" class="form-control" id="country"  required>-->
+            <div class="form-group">
+                {{ order_form.card_no.label(class_="control-label") }}:
+                {{ order_form.card_no(class_="form-control", required=True) }}
+            </div>
+            <div class="form-group">
+                {{ order_form.exp_date_month.label(class_="control-label") }}:
+                <!--<input type="email" class="form-control" id="expidationDate" required>-->
+                <div class="selects">
+                    {{ order_form.exp_date_month(class_="tag") }}
+                    {{ order_form.exp_date_year(class_="tag") }}
+                </div>
+            </div>
+            <div class="form-group">
+                {{ order_form.security_code.label(class_="control-label") }}:
+                    <div class="selects">
+                    {{ order_form.security_code(class_="form-control", required=True) }}
+                    <img src="{{ url_for(".static", filename="assets/img/order-summary/code.png") }}">
+                    </div>
+            </div>
+            <div class="form-group">
+                {{ order_form.order_card_btn(class_="btn btn-primary red-button") }}
+                <button type="reset" class="btn btn-primary grey-button" onclick="history.go(-1);">{{ _("Cancel") }}</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock content %}
+
+{% block scripts_under_content %}
+    <script src="{{ url_for(".static", filename="assets/plugins/validator/validator.min.js") }}"></script>
+    <script src="{{ url_for(".static", filename="assets/plugins/jQueryFormStyler-master/jquery.formstyler.min.js") }}"></script>
+    <script src="{{ url_for(".static", filename="assets/js/orderSummaryCtrl.js") }}"></script>
+{% endblock %}

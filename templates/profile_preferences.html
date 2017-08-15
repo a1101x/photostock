@@ -1,0 +1,67 @@
+{% extends "base_profile.html" %}
+
+{% block content %}
+<div class="profile-preferences">
+    <h3>{{ _("Account Settings") }}</h3>
+    {% if request.args.status == 'password' %}
+        <div class="updated">{{ _("Your password has been updated.") }}</div>
+    {% endif %}
+    {% if request.args.status == 'account' %}
+        <div class="updated">{{ _("Your account has been updated.") }}</div>
+    {% endif %}
+    {% if request.args.status == 'email' %}
+        <div class="updated">{{ _("Please, follow the link from email to continue.") }}</div>
+    {% endif %}
+    <table class="profile-table">
+            <col width="15%">
+            <col width="30%">
+            <col width="55%">
+            <tr>
+                <td>{{ _("Username") }}</td>
+                <td>{{ g.user.fullName }}</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>{{ _("Password") }}</td>
+                <td>***********</td>
+                <td><a href="{{ url_for("ProfileView:change_password", lang_code=g.current_lang) }}">{{ _("Change password") }}</a></td>
+            </tr>
+            <tr>
+                <td>{{ _("Email") }}</td>
+                <td>{{ g.user.email }}</td>
+                <td><a href="{{ url_for("ProfileView:change_email", lang_code=g.current_lang) }}">{{ _("Change Email Address") }}</a></td>
+            </tr>
+            <tr>
+                <td>Neteller</td>
+                <td>{{ g.neteller_acc.emailAddress }}</td>
+                <td><a href="{{ url_for("ProfileView:change_neteller_account", lang_code=g.current_lang) }}">{{ _("Change account where to get paid") }}</a></td>
+            </tr>
+            <tr>
+                <td>Bank</td>
+                <td>{{ g.bank_acc.iban }}</td>
+                <td><a href="{{ url_for("ProfileView:change_bank_account", lang_code=g.current_lang) }}">{{ _("Change account where to get paid") }}</a></td>
+            </tr>
+        </table>
+    <p class="profile-title">{{ _("Email preference") }}</p>
+    <p>{{ _("What types of communication would you like to receive from photostock") }}</p>
+
+    <form action="{{ url_for("ProfileView:index", lang_code=g.current_lang) }}" method="post">
+        {{ settings_form.csrf_token }}
+        <ul>
+            {% for email_preference in settings_form.email_preferences %}
+            <li>
+                <label>
+                    <span class="squaredThree">
+                        {{ email_preference }}
+                        <label for="email_preferences-{{ loop.index -1 }}"></label>
+                    </span>
+                    {{ email_preference.label.text }}
+                </label>
+            </li>
+            {% endfor %}
+        </ul>
+
+        <button type="submit" class="red-button">{{ _("Save Changes") }}</button>
+    </form>
+</div>
+{% endblock content %}

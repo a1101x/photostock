@@ -1,0 +1,135 @@
+.header-section {
+    background-color: #1dc4ff;
+    border: none;
+    padding: 3px 0;
+}
+
+.header-section .nav > li > a,
+.header-section .nav > li > a:focus {
+    cursor: pointer;
+    font-size: 18px;
+    color: #fff;
+}
+
+.header-section .nav > li > a:hover,
+.header-section .nav > li > a:focus:hover {
+    color: #fff;
+    border-bottom: 1px solid #fff;
+}
+
+.header-section.navbar-default .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+
+.header-section.navbar-default .navbar-toggle:focus {
+    background-color: #1dc4ff;
+}
+
+.header-section.navbar-default .navbar-toggle {
+    margin-top: 10px;
+    border-color: #fff;
+}
+
+.header-section.navbar-default .navbar-toggle:hover {
+    background-color: #fff;
+}
+
+.header-section.navbar-default .navbar-toggle:hover .icon-bar {
+    background-color: #1dc4ff;
+}
+
+.header-section .navbar-header p, .header-section .photostock-logo-small {
+    float: left;
+    margin: 0;
+}
+
+.header-section .navbar-header p {
+    font-size: 25px;
+    color: white;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.header-section .menu-right > li > a {
+    margin: 0 23px;
+    padding: 0;
+}
+
+.header-section .menu-right li:last-child {
+    /*border: none;*/
+}
+
+.header-section .mobile_menu {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .header-section .mobile_menu {
+        display: block;
+        /*height: 52px;*/
+        border-bottom: 1px solid #ebebeb;
+    }
+
+    .header-section .navbar-nav {
+        margin: 0 -15px;
+    }
+
+    .header-section .mobile_menu a i {
+        margin-right: 17px;
+    }
+
+    .header-section .mobile_menu a {
+
+        color: #000 !important;
+    }
+
+    .header-section .only_desktop {
+        display: none;
+    }
+
+    div#bs-example-navbar-collapse-1 {
+        position: absolute;
+        /*height: 112px;*/
+        width: 100%;
+        z-index: 14;
+        background-color: #fff;
+    }
+
+    .header-section .nav > li > a {
+        margin: 17px 23px;
+    }
+
+    .header-section .nav > li > a:hover,
+    .header-section .nav > li > a:focus:hover {
+        /*color: #fff;*/
+        border-bottom: none;
+    }
+
+    .header-section .navbar-header a img {
+        margin: 0 10px;
+    }
+
+}
+
+@media (min-width: 768px) {
+    .header-section .navbar-header p {
+        margin-top: 21px;
+    }
+
+    .header-section {
+        height: 85px;
+    }
+
+    .header-section .photostock-logo-small {
+        margin: 13px 11px 0 107px;
+    }
+
+    .header-section .menu-right {
+        margin-top: 30px;
+        float: right;
+        margin-right: 57px !important;
+    }
+}
+
+
+

@@ -1,0 +1,448 @@
+.image-details-section .image-detail-information a {
+}
+
+.image-details-section .image-details-block {
+    margin: 28px 15px 0 15px;
+}
+
+.image-details-section .image-details-block .image-details {
+    padding-left: 47px;
+}
+
+.image-details-section .image-details-block .image-detail-information .image-name {
+    font-size: 20px;
+    font-weight: 600;
+    color: #464646;
+}
+
+.image-details-section .image-details-block .image-detail-information .image-details > ul {
+    margin-top: 19px;
+    line-height: 21px;
+}
+
+.image-details-section .image-details-block .image-detail-information .image-details ul li {
+
+}
+
+.image-details-section .image-details-block .image-detail-information .image-details > ul li a {
+    color: #1dc4ff;
+}
+
+.image-details-section .similar-same-artist ul li.active a, .image-details-section .similar-same-artist ul li.active a:hover, .image-details-section .similar-same-artist ul li a:hover {
+    color: #333333 !important;
+}
+
+.image-details-section .author-profile .avatar, .image-details-section .author-profile .name {
+    margin-top: 4px;
+    float: left;
+    margin-right: 4px;
+}
+
+.image-details-section .author-profile .name p:first-child {
+    font-weight: 800;
+}
+
+.image-details-section .author-profile .profile-block {
+    line-height: 21px;
+    /*white-space: nowrap;*/
+    padding: 11px 5px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.image-details-section .author-profile .profile-block p:first-child {
+    font-size: 13px;
+    color: #535353;
+    font-weight: 800;
+}
+
+.image-details-section .author-profile ul li i {
+    margin-right: 10px;
+}
+
+.image-details-section .author-profile .author-avatar-name {
+    margin-top: 26px;
+    margin-left: 4px;
+}
+
+.image-details-section .author-profile .avatar img {
+    height: 44px;
+    width: 44px;
+    border: solid 1px #eeeeee;
+    margin-right: 12px;
+    border-radius: 2px;
+    padding: 2px;
+    background-clip: content-box; /* support: IE9+ */
+    background-color: #ccc;
+}
+
+.image-details-section .author-profile p {
+    color: #403e3e;
+}
+
+.image-details-section .author-profile {
+    padding-left: 36px;
+}
+
+.image-details-section .author-profile > div {
+    padding-left: 38px;
+    border-left: 1px solid #dddddd;
+}
+
+.image-details-section .image-profile .image-preview > img {
+    height: 100%;
+    object-fit: contain;
+    width: 100%;
+}
+
+.image-details-section .image-preview {
+    padding-bottom: 30px;
+}
+
+.image-details-section .similar-same-artist {
+    margin-top: 14px;
+}
+
+.image-details-section .lightbox-dropdown .not-looged-in {
+    width: 203px;
+}
+
+.image-details-section .lightbox-dropdown .share-list {
+    display: none;
+    border-radius: 5px;
+    overflow: hidden;
+    color: #383838;
+    z-index: 11;
+    top: 32px;
+    left: 43px;
+    background-color: #fff;
+    position: absolute;
+    padding: 15px 18px;
+}
+
+.image-details-section .lightbox-dropdown .not-looged-in .logged-in-links a:nth-of-type(1) {
+    padding: 0;
+}
+
+.image-details-section .lightbox-dropdown .lightbox-dropdown-form, .image-details-section .lightbox-dropdown .share-list {
+    width: 200px;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+    text-align: left;
+}
+
+.image-details-section .share-list {
+    width: 127px;
+}
+
+.image-details-section .share-list ul li i {
+    margin-right: 10px;
+}
+
+.image-details-section .light-box.share-box {
+    margin-left: 0;
+}
+
+.light-box .fa-caret-down,
+.share-box .fa-caret-down {
+    margin: 0 0 0 5px;
+}
+
+.share-box .fa-share-alt {
+    margin: 0 5px 0 0;
+    font-size: 20px;
+    position: relative;
+    top: 2px;
+    padding: 0;
+}
+
+.image-details-section .light-box {
+    padding: 9px 29px 10px;
+    color: #64676b;
+}
+
+.image-details-section .similar-same-artist .image-preview-title p {
+    color: #666666;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    width: 100%;
+}
+
+.image-details-section .similar-same-artist .similar-same-header {
+    border-bottom: 1px solid #dddddd;
+    padding-bottom: 5px;
+    margin-bottom: 22px;
+}
+
+.image-details-section .similar-same-artist .similar-same-header span {
+    font-size: 15px;
+    font-weight: 700;
+    color: #333333;
+    border-right: 1px solid #dddddd;
+    padding-right: 9px;
+}
+
+.image-details-section .similar-same-artist .similar-same-header a {
+    padding-left: 5px;
+}
+
+.image-details-section .similar-same-artist .image-preview-title {
+    text-align: left;
+    float: left;
+    position: relative;
+    margin-right: 0;
+    padding: 1px 7px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.image-details-section .similar-same-artist .tab-content > div > a {
+    display: block;
+    padding-bottom: 100%;
+}
+
+.image-details-section .similar-same-artist .tab-content > div > a:last-child img {
+    left: 0px;
+    position: absolute;
+    top: 0;
+    width: 90%;
+    bottom: 0;
+    margin: auto;
+}
+
+.image-details-section .licenses > label {
+    float: left;
+}
+
+.image-details-section .licenses {
+    padding: 10px 0;
+    border-top: 1px solid #666666;
+    border-bottom: 1px solid #666666;
+    height: 43px;
+}
+
+@media (max-width: 992px) {
+
+    .image-details-section .author-profile .author-avatar-name {
+        margin-top: 0;
+    }
+
+    .image-details-section .author-profile > div {
+
+    }
+
+    .image-details-section .light-box {
+        margin-left: 0;
+    }
+
+    .image-details-section .image-profile .image-preview {
+        text-align: center;
+    }
+
+    .image-details-section .image-profile .image-preview > img {
+        margin-bottom: 20px;
+
+    }
+
+    .licenses {
+        height: auto;
+    }
+
+    .licenses > label, .image-details .choose-license {
+        float: none;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .image-details-section .image-profile .image-preview > img {
+        width: auto;
+    }
+}
+
+@media (min-width: 768px) {
+    .image-details-section .image-details-block .image-profile [class*="col-"] {
+        display: table-cell;
+        vertical-align: top;
+        position: relative;
+    }
+}
+
+.image-details-section .share-lightbox {
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    background-color: #fff;
+}
+
+.image-details-section .share-lightbox.mobile {
+    display: none;
+}
+
+@media (max-width: 480px) {
+    .image-details-section .lightbox-dropdown .share-list {
+        text-align: left;
+    }
+
+    .image-details-section .image-details {
+        width: 100%;
+    }
+
+    .image-details-section .share-lightbox {
+        display: none;
+    }
+
+    .image-details-section .result-info .image-details .lightbox-dropdown {
+        width: 100%;
+        text-align: center;
+    }
+
+    .image-details-section .result-info .image-details .tab-content .download-lightbox > a,
+    .image-details-section .result-info .image-details .tab-content .download-lightbox > input {
+        width: 100%;
+    }
+
+    .image-details-section .share-lightbox.mobile {
+        display: block;
+        position: inherit;
+        margin-bottom: 15px;
+    }
+
+    .image-details-section .author-profile {
+        display: none;
+    }
+
+    .image-details-section .download-lightbox {
+        margin-left: -15px;
+        margin-right: -15px;
+        width: 100%;
+    }
+    .image-details-section .download-lightbox > a {
+        width: 93%;
+        margin: 15px auto;
+    }
+
+    .image-details-section .download-lightbox input {
+        height: 56px;
+        width: 100%;
+        border: none;
+        box-shadow: none;
+        background: #d43329;
+        background: -moz-linear-gradient(top, #d43329 0%, #bc0904 100%);
+        background: -webkit-linear-gradient(top, #d43329 0%, #bc0904 100%);
+        background: linear-gradient(to bottom, #d43329 0%, #bc0904 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d43329', endColorstr='#bc0904', GradientType=0);
+    }
+
+    .image-details-section .image-details > ul li span {
+        float: right;
+    }
+
+    .image-details-section .image-details-block .image-details {
+        padding-left: 15px;
+    }
+
+    .image-details-section .image-preview {
+        position: relative;
+        width: 100%;
+        padding-bottom: 100%;
+    }
+
+    .image-details-section .image-profile .image-preview > img {
+        position: absolute !important;
+        width: 100% !important;
+        height: 100% !important;
+        left: 0 !important;
+        padding: 10px;
+    }
+
+    .pagination-pages {
+        padding-right: 0;
+    }
+
+    .related-tags, .counter-related, .pagination-pages {
+        position: relative;
+    }
+
+    .image-details-section .image-details ul li {
+        position: relative;
+    }
+
+    .image-details-section .image-details ul li .check {
+        display: block;
+        position: absolute;
+        border: 2px solid #1cccf5;
+        border-radius: 100%;
+        height: 16px;
+        width: 16px;
+        top: 8px;
+        right: 10px;
+        z-index: 5;
+    }
+
+    .image-details-section .result-info .image-details .tab-content label {
+        width: 100%;
+        padding-right: 10%;
+    }
+
+    .image-details-section .image-details ul li input[type=radio] {
+        position: absolute;
+        visibility: hidden;
+    }
+
+    .image-details-section .image-details input[type=radio]:checked ~ .check::before {
+        background: #fff;
+    }
+
+    .image-details-section .image-details input[type=radio]:checked ~ .check {
+        border: solid 2px #1cccf5;
+        padding: 3px;
+        background-clip: content-box;
+        background-color: #1cccf5;
+    }
+
+    .image-details-section .result-info .image-details .tab-content #standard > ul > li {
+        background-color: #212121;
+        border-bottom: none;
+    }
+
+    .image-details-section .image-details .nav li {
+        width: 100%;
+    }
+
+    .image-details-section .image-details .light-box {
+        color: #1cccf5;
+        padding: 0;
+        display: inline;
+        background: none;
+    }
+
+    .image-details-section .image-details .lightbox-dropdown:nth-of-type(1) {
+        text-align: left;
+    }
+
+    .image-details-section .image-details .lightbox-dropdown:nth-of-type(2) {
+        text-align: right;
+        background-position-x: 95%;
+    }
+
+    .image-details-section .image-details .lightbox-dropdown:nth-of-type(2) .share-box {
+        border-bottom: 0;
+    }
+    .image-details-section .image-details .lightbox-dropdown {
+        width: 50%;
+    }
+
+    .image-details-section .light-box:after {
+        display: none;
+    }
+
+    .image-details-section .similar-same-artist .image-preview-title:nth-child(n+5) {
+        display: none;
+    }
+
+    .image-details-section .image-details .nav-tabs, .image-details .tab-content {
+        margin: 0 -15px;
+    }
+}

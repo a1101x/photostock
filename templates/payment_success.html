@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <p LANG="en-GB" CLASS="western" ALIGN="left" STYLE="line-height: 100%">
+                <font FACE="Lato, serif"><font SIZE=2 STYLE="font-size: 9pt"><U><B>PAYMENT SUCCESS</B></U></font></font></p>
+
+                <div TYPE=FOOTER>
+                    <p LANG="en-GB" STYLE="margin-top: 0.72in; margin-bottom: 0in; line-height: 100%">
+                        <span ID="Frame1" DIR="LTR" STYLE="position: absolute; top: 0in; left: 0in; width: 0.02in; border: none; padding: 0in; background: #ffffff">
+                            <p LANG="en-GB" STYLE="margin-bottom: 0in; border: none; padding: 0in; line-height: 100%"></p>
+                        </span>
+                        <sdfield TYPE=DOCINFO SUBTYPE=THEME SDFIXED></sdfield>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+{% block scripts_under_content %}
+    <script type="text/javascript" charset="utf-8">
+        var current_lang = '{{ g.current_lang }}';
+    </script>
+{% endblock scripts_under_content %}
+

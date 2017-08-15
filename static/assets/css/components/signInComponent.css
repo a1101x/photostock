@@ -1,0 +1,36 @@
+.sign-in-form form input[type="text"], .sign-in-form form input[type="password"], .sign-in-form form input[type="email"] {
+    border-radius: 0;
+    height: 28px;
+}
+
+.sign-in-form h2 {
+    font-size: 20px;
+    margin-bottom: 14px;
+    margin-top: 24px;
+    color: #606060;
+}
+
+.sign-in-form a {
+    font-size: 14px;
+    padding: 10px 0 0 4px;
+    float: left;
+    color: #008aaf;
+}
+
+.sign-in-form input[type="submit"]:not(.red-button) {
+    line-height: 10px;
+    display: block;
+    float: left;
+    color: #63666b;
+    margin: 7px 15px 0 0;
+    font-weight: 900;
+    height: 27px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,e3e3e3+100 */
+    background: #ffffff; /* Old browsers */
+    background: -moz-linear-gradient(top, #ffffff 0%, #e3e3e3 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #ffffff 0%, #e3e3e3 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #ffffff 0%, #e3e3e3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e3e3e3', GradientType=0); /* IE6-9 */
+}

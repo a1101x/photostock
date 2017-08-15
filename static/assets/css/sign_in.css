@@ -1,0 +1,40 @@
+
+.sign-in {
+    margin-top: 170px;
+    margin-bottom: 80px;
+}
+
+.sign-in a {
+    color: #008bb2;
+}
+
+.sign-in .form-group {
+    margin-bottom: 10px;
+}
+
+.sign-in form input {
+    border-radius: 1px;
+}
+
+.sign-in form {
+    margin: 0 31px;
+    padding: 25px 31px 32px;
+}
+
+.sign-in form input[type="submit"] {
+    padding-top: 4px;
+    margin-bottom: 16px;
+    margin-top: 25px;
+    border-radius: 3px;
+}
+
+.sign-in .register-links {
+    margin-top: 28px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.sign-in .register-links a {
+    display: block;
+    font-size: 14px;
+}

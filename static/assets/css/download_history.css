@@ -1,0 +1,136 @@
+.download-section .section-heading {
+    margin: 27px 15px 12px;
+    padding: 0 0 10px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.download-section .section-heading h2 {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato';
+}
+
+.download-section .section-heading input[type="text"] {
+    width: 30px;
+    text-align: center;
+}
+
+.download-section .red-button {
+    opacity: 0;
+    width: 100%;
+    margin: 0;
+    display: block;
+}
+
+.download-section .lightboxes-prev {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 0;
+}
+
+.download-section .square img {
+    padding: 0;
+    border-radius: 0;
+}
+
+.download-section .square {
+    float: none;
+}
+
+.download-section .lightboxes-prev:hover {
+    box-sizing: border-box;
+    outline: 1px solid #e5e5e5;
+    background-color: #f3f3f3;
+}
+
+.download-section .jq-selectbox__trigger {
+    border: none;
+}
+
+.download-section .jq-selectbox__select:hover {
+    background: none;
+}
+
+.download-section .jq-selectbox__trigger-arrow {
+    top: 9px;
+}
+
+.download-section .jq-selectbox__dropdown {
+    border-radius: 0;
+}
+
+.download-section .jq-selectbox.focused .jq-selectbox__select {
+    border: none;
+}
+
+/*.download-section .jq-selectbox__select-text:focus, .download-section .jq-selectbox:focus, .download-section .filter_select:focus {*/
+/*outline: none !important;*/
+/*}*/
+
+.download-section .jq-selectbox__select,
+.download-section .jq-selectbox__select:active,
+.download-section .jq-selectbox__select:hover {
+    outline: none;
+    line-height: 23px;
+    height: 21px;
+    padding: 0 29px 0 10px;
+    border: none;
+    background: none;
+    box-shadow: none;
+}
+
+/*.download-section .lightboxes-prev {*/
+/*border: 1px solid red;*/
+/*box-sizing: border-box;*/
+/*}*/
+.download-section .dropdown-toggle {
+    padding-top: 0;
+    padding-bottom: 0;
+
+}
+
+.download-section .lightboxes-prev:hover .red-button {
+    opacity: 1;
+    border-color: #b22520;
+    background: #e55851; /* Old browsers */
+    background: -moz-linear-gradient(top, #e55851 0%, #b22520 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #e55851 0%, #b22520 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #e55851 0%, #b22520 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e55851', endColorstr='#b22520', GradientType=0); /* IE6-9 */
+
+}
+
+.download-section .lightboxes-prev b {
+    margin-top: 5px;
+    font-size: 13px;
+    display: block;
+}
+
+.download-section .lightboxes-prev p {
+    text-align: left;
+    color: #85878a;
+    font-size: 12px;
+}
+
+.download-section .lightboxes-prev p:nth-of-type(1) {
+    margin-bottom: 0;
+}
+
+.download-section .lightboxes-prev p:nth-of-type(2) {
+
+}
+
+.download-section .lightboxes-prev:hover a.red-button {
+    opacity: 1;
+    display: block;
+    text-align: center;
+    line-height: 28px;
+}
+
+.download-section .lightboxes-prev:hover a.red-button:hover {
+    color: #fff;
+}
+
+.search-results-section .jq-selectbox li.selected {
+    background-color: #fff;
+}

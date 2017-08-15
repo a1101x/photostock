@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% from "macros/field_errors.html" import field_errors %}
+
+    <section class="order-summary-section">
+        <div class="container">
+            <div class="row">
+                <div class="order-summary-block">
+                    <div class="col-lg-10 col-lg-offset-1">
+                        <h2>{{ _("Order Summary") }}</h2>
+                        <table>
+                            <col width="72%">
+                            <col width="28%">
+                            <tr>
+                                <td>
+                                    <b>{{ _("Monthly Subscriptions") }}</b><br/>
+                                    1 {{ request.args.duration }}, {{ request.args.count }} {{ _("Downloads per Month ") }}
+                                </td>
+                                <td>&euro; {{ g.summ }}</td>
+                            </tr>
+                            <tr class="total-summary">
+                                <td colspan="1"><a href="{{ url_for("PricingView:index", lang_code=g.current_lang) }}">{{ _("Choose another plan") }}</a></td>
+                                <td>{{ _("TOTAL") }}: <b>&euro; {{ g.summ }}</b></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <form action="{{ url_for("OrderView:process", lang_code=g.current_lang) }}" method="post">
+                                        <input type="hidden" name="coupon" id="coupon">
+                                        <input type="hidden" name="vat" id="vat">
+                                        <input type="hidden" name="autorenew" id="autorenew" value="true">
+                                        <input type="hidden" name="duration" id="duration" value="{{ request.args.duration }}">
+                                        <input type="hidden" name="license_type" id="license_type" value="{{ request.args.license_type }}">
+                                        <input type="hidden" name="count" id="count" value="{{ request.args.count }}">
+                                        <button type="submit" class="btn btn-primary red-button">{{ _("Process Order &gt;") }}</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock content %}
+{% block scripts_under_content %}
+    <script type="text/javascript" charset="utf-8">
+        var current_lang = '{{ g.current_lang }}';
+    </script>
+    <script src="{{ url_for(".static", filename="assets/plugins/validator/validator.min.js") }}"></script>
+    <script src="{{ url_for(".static", filename="assets/plugins/jQueryFormStyler-master/jquery.formstyler.min.js") }}"></script>
+    <script src="{{ url_for(".static", filename="assets/js/orderSummaryCtrl.js") }}"></script>
+{% endblock %}

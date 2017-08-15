@@ -1,0 +1,197 @@
+.order-summary-section {
+    min-height: 500px;
+}
+
+.order-summary-section h2 {
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 27px;
+    text-align: center;
+}
+
+.order-summary-section h4 {
+    background: url("../img/order-summary/lock.png") no-repeat 0% 20%;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.order-summary-section form input {
+    height: 28px;
+}
+
+.order-summary-section form input[type="submit"] {
+    border-radius: 0 3px 3px 0;
+    margin-left: -3px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.order-summary-section .align-left-forms p {
+    margin: 0;
+    color: #999999;
+    font-size: 11px;
+}
+
+.order-summary-section .align-left-forms {
+    text-align: left !important;
+}
+
+.order-summary-section h2:nth-of-type(2) {
+    margin-top: 55px;
+    margin-bottom: 40px;
+}
+
+.order-summary-section a {
+    color: #2db4e7;
+}
+
+.order-summary-section .order-summary-block {
+    margin: 27px 0;
+}
+
+.order-summary-section .order-summary-block table {
+    width: 87%;
+    margin: 0 auto;
+}
+
+.order-summary-section .order-summary-block table tr {
+    border-bottom: 1px solid #eeeeee;
+}
+
+.order-summary-section .order-summary-block table tr td:first-child {
+    padding-left: 12px;
+}
+
+.order-summary-section .order-summary-block table tr td:last-child {
+    padding-right: 12px;
+    text-align: right;
+}
+
+.order-summary-section .order-summary-block table tr:nth-child(2) {
+    height: 52px;
+}
+
+.order-summary-section .order-summary-block table tr:nth-child(n+3) td {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.order-summary-section .order-summary-block table tr:first-child td:nth-of-type(2) {
+    cursor: pointer;
+    height: 38px;
+}
+
+.order-summary-section .order-summary-block table tr:nth-of-type(2) td:nth-of-type(2), .order-summary-section .order-summary-block table tr:nth-of-type(2) td:nth-of-type(3) {
+    vertical-align: top;
+    padding-top: 6px;
+}
+
+.order-summary-section .order-summary-block table tr:first-child td:nth-of-type(2), .order-summary-section .order-summary-block table tr:nth-of-type(2) td:nth-of-type(2) {
+    border: 1px solid #eeeeee;
+    text-align: center;
+}
+
+.order-summary-section .payment > img {
+    margin-bottom: 19px;
+}
+
+.order-summary-section .payment {
+    padding-top: 47px;
+    border-top: 1px solid #cbcbcb;
+    width: 84%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.order-summary-section .payment form {
+    text-align: right;
+}
+
+.order-summary-section .payment .form-group .jq-selectbox__select-text {
+    text-align: left;
+}
+
+.order-summary-section .payment .form-group .jq-selectbox__select {
+    background: url("../img/order-summary/arrows.png") no-repeat 93% 49%;
+    -moz-box-shadow: inset 5px 0 10px -5px #b6b6b6, inset -5px 0 10px -5px #b6b6b6;
+    -webkit-box-shadow: inset 5px 0 10px -5px #b6b6b6, inset -5px 0 10px -5px #b6b6b6;
+    box-shadow: inset 5px 0 10px -5px #b6b6b6, inset -5px 0 10px -5px #b6b6b6;
+}
+
+.order-summary-section .payment .form-group .selects button[type="submit"] {
+    width: 70%;
+}
+
+.order-summary-section .payment .form-group .selects #country-styler {
+    width: 100%;
+}
+
+.order-summary-section .payment .form-group .selects .jq-selectbox:nth-of-type(1) {
+    width: 60%;
+}
+
+.order-summary-section .payment .form-group .jq-selectbox__trigger {
+    display: none;
+}
+
+.order-summary-section .payment .form-group .jq-selectbox__select {
+    padding: 0 7px 0 10px;
+}
+
+.order-summary-section .payment .form-group .selects .jq-selectbox:nth-of-type(2) {
+    width: 28%;
+}
+
+.order-summary-section .payment .form-group input {
+    border-radius: 0;
+}
+
+.order-summary-section .payment .form-group:not(.has-error) input {
+    border-color: #b8b8b8;
+    height: 30px;
+}
+
+.order-summary-section .payment .security p {
+    text-align: left;
+}
+
+.order-summary-section .payment .form-group .selects {
+    text-align: left;
+}
+
+.order-summary-section .payment .form-group #secutityCode {
+    width: 60%;
+    display: inline-block;
+}
+
+.order-summary-section .payment .form-group input, .order-summary-section .payment .form-group .selects {
+    width: 64%;
+    display: inline-block;
+}
+
+.order-summary-section .payment .form-control {
+    height: 30px;
+}
+
+.order-summary-section .payment .form-group {
+    margin-bottom: 5px;
+}
+
+.order-summary-section .payment .form-group label {
+    width: 34%;
+    font-size: 13px;
+}
+
+.order-summary-section .payment .form-group input, .order-summary-section .payment .form-group label {
+    display: inline-block;
+}
+
+.hidden-form {
+    display: none;
+}
+
+@media (max-width: 480px) {
+    .order-summary-section .payment > img, .order-summary-section .payment {
+        width: 100%;
+    }
+}

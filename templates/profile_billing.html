@@ -1,0 +1,38 @@
+{% extends "base_profile.html" %}
+
+{% block content %}
+<div class="profile-billing">
+    <h3>billing</h3>
+    <p class="profile-title">{{ _("Image payment method") }}</p>
+    <table class="billing-payment-method">
+        <col width="10%">
+        <col width="27%">
+        <col width="37%">
+        <col width="40%">
+        <tr>
+            <td>
+                <img src="../../../static/assets/img/profile/american-express.png" alt=""/>
+            </td>
+            <td>
+                &bull;&bull;&bull;&bull;  &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; 0003
+            </td>
+            <td>
+                Expires 12/2014
+            </td>
+            <td style="white-space: nowrap">
+                <a href="{{ url_for("ProfileView:billing_change_card", lang_code=g.current_lang) }}">{{ _("Change Payment Information") }}</a>
+            </td>
+        </tr>
+    </table>
+    <p class="profile-title">{{ _("Billing Address") }}</p>
+    <ul>
+        <li>Daniela Tacanni</li>
+        <li>Via della Boscaiola 26</li>
+        <li>Milano, Italia 20159</li>
+        <li>Italy</li>
+        <li>+390229047571</li>
+        <li><a href="{{ url_for("ProfileView:billing_change_address", lang_code=g.current_lang) }}">{{ _("Change Billing Address") }}</a></li>
+    </ul>
+</div>
+{% endblock content %}
+

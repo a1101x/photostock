@@ -1,0 +1,32 @@
+{% extends "base_profile.html" %}
+
+{% from "macros/field_errors.html" import field_errors %}
+
+{% block content %}
+<div class="profile-change-email">
+    <h1>{{ _("Change Email Address") }}</h1>
+    <form data-toggle="validator" role="form" data-focus="false" data-disable="false" action="" method="POST">
+        {{ change_email_form.csrf_token }}
+        <div class="form-group">
+            <div class="form-group {% if change_email_form.email.errors %}has-error{% endif %}">
+                {{ change_email_form.email.label(class_="control-label") }}
+                {{ change_email_form.email(class_="form-control", required=True) }}
+                {{ field_errors(change_email_form.email.errors) }}
+            </div>
+            <div class="form-group">
+                {{ change_email_form.email_confirm.label(class_="control-label") }}
+                {{ change_email_form.email_confirm(class_="form-control", required=True, data_match="#email") }}
+                {{ field_errors(change_email_form.email_confirm.errors) }}
+            </div>
+        </div>
+        <div class="form-group">
+            {{ change_email_form.change_email_btn(class_="btn btn-primary red-button") }}
+            <button type="reset" class="btn btn-primary grey-button" onclick="history.go(-1);">{{ _("Cancel") }}</button>
+        </div>
+    </form>
+</div>
+{% endblock content %}
+{% block scripts_under_content %}
+    <script src="{{ url_for(".static", filename="assets/plugins/validator/validator.min.js") }}"></script>
+{% endblock scripts_under_content %}
+

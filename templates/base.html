@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% from "macros/popups.html" import popup_error %}
+{% from "macros/popups.html" import popup_success %}
+{% block head %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>photostock</title>
+
+    <link rel="stylesheet" href="{{ url_for(".static", filename="assets/css/bootstrap.min.css") }}" type="text/css">
+
+    <link rel="shortcut icon" href="{{ url_for(".static", filename="assets/img/favicon.ico") }}" type="image/x-icon">
+
+    <link rel="stylesheet" href="{{ url_for(".static", filename="assets/css/main.css") }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for(".static", filename="assets/css/footer.css") }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for(".static", filename="assets/css/header.css") }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for(".static", filename="assets/css/form-section.css") }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for(".static", filename="assets/css/sign_in.css") }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for(".static", filename="assets/css/create_account.css") }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for(".static", filename="assets/css/best-works.css") }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for(".static", filename="assets/css/freewall.css") }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for(".static", filename="assets/css/category-galleries.css") }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for(".static", filename="assets/css/big_search.css") }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for(".static", filename="assets/css/how_it_works.css") }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for(".static", filename="assets/css/pricing.css") }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for(".static", filename="assets/css/components/createAccountComponent.css") }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for(".static", filename="assets/css/components/signInComponent.css") }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for(".static", filename="assets/css/components/sign-in-dropdown.css") }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for(".static", filename="assets/css/auto-complete.css") }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for(".static", filename="assets/css/components/logged-in-dropdown.css") }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for(".static", filename="assets/css/components/lightbox-dropdown.css") }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for(".static", filename="assets/css/components/search.css") }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for(".static", filename="assets/css/components/similar-same-artist.css") }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for(".static", filename="assets/css/components/left-menu.css") }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for(".static", filename="assets/css/search-results.css") }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for(".static", filename="assets/css/lightboxes.css") }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for(".static", filename="assets/css/image-details.css") }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for(".static", filename="assets/css/order-summary.css") }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for(".static", filename="assets/css/profile.css") }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for(".static", filename="assets/css/download_history.css") }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for(".static", filename="assets/plugins/jQueryFormStyler-master/jquery.formstyler.css") }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for(".static", filename="assets/css/font-awesome.min.css") }}" type="text/css">
+{% endblock head %}
+
+</head>
+
+<body>
+{% block header %}
+
+{{ popup_error(g.errors) }}
+
+{{ popup_success(g.success_message) }}
+
+<nav class="header-section navbar-default">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">{{ _("Toggle navigation") }}</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a href="{{ url_for("IndexView:index", lang_code=g.current_lang) }}">
+            <img class="photostock-logo-small" src="{{ url_for(".static", filename="assets/img/header/logo_new.png") }}" alt="logo"/>
+            <p>photostockStock</p>
+        </a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav menu-right">
+            <li class="only_desktop">
+                <a class="page-scroll" href="{{ url_for("PricingView:index", lang_code=g.current_lang) }}">{{ _("Pricing") }}</a>
+            </li>
+
+            {% if g.user.is_anonymous %}
+            <li class="only_desktop">
+                <a class="page-scroll" id="sign-in-dropdown" href="javascript:void(0)">{{ _("Sign in") }}</a>
+                <div class="sign-in-dropdown">
+                    <div class="sign-in-form">
+                        <h2 class="section-heading">{{ _("Already have an account?") }}</h2>
+                        <form data-toggle="validator" role="form" data-focus="false" action="{{ url_for("UserView:login", lang_code=g.current_lang) }}" method="POST">
+                            {{ g.login_form.csrf_token }}
+                            <div class="form-group">
+                                {{ g.login_form.email(class_="form-control", id="h_email", placeholder=_("Email"), required=True) }}
+                            </div>
+                            <div class="form-group">
+                                {{ g.login_form.password(class_="form-control", id="h_password", data_minlength="6", required=True, placeholder=_("Password")) }}
+                            </div>
+                            {{ g.login_form.login_btn(class_="red-button") }}
+                            <a href="{{ url_for("UserView:recover", lang_code=g.current_lang) }}">{{ _("Forgot your password?") }}</a>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                    <div class="register-or-create">
+                        <p>{{ _("Not Registered?") }}</p>
+                        <a href="{{ url_for("UserView:registration", lang_code=g.current_lang) }}">{{ _("Create a Free Browse Account") }}</a>
+                    </div>
+                </div>
+            </li>
+            <li class="mobile_menu">
+                <a class="page-scroll" href="{{ url_for("PricingView:index", lang_code=g.current_lang) }}"><i class="fa fa-credit-card"></i>{{ _("Pricing") }}</a>
+            </li>
+            <li class="mobile_menu">
+                <a class="page-scroll" href="{{ url_for("UserView:login", lang_code=g.current_lang) }}"><i class="fa fa-sign-in"></i>{{ _("Sign In") }}</a>
+            </li>
+            <li class="mobile_menu">
+                <a class="page-scroll" href="{{ url_for("UserView:registration", lang_code=g.current_lang) }}"><i class="fa fa-user-plus"></i>{{ _("Join") }}</a>
+            </li>
+            {% else %}
+            <li class="only_desktop" id="sign-in-dropdown">
+                <a class="page-scroll logged-in" >{{ _("Hi") }}, {{ g.user.fullName }}<i class="fa fa-caret-down"></i></a>
+                <div class="logged-in-dropdown sign-in-dropdown">
+                    <ul>
+                        <li><a href="{{ url_for("LightboxesView:get", lang_code=g.current_lang) }}"><i class="fa fa-lightbulb-o"></i>{{ _("Lightboxes") }}</a></li>
+                        <li><a href="{{ url_for("ProfileView:index", lang_code=g.current_lang) }}"><i class="fa fa-cog"></i>{{ _("Account Details") }}</a></li>
+                        <li><a href="{{ url_for("DownloadHistoryView:index", lang_code=g.current_lang) }}"><i class="fa fa-download"></i>{{ _("Download History") }}</a></li>
+                        <li><a href="{{ url_for("UserView:logout", lang_code=g.current_lang) }}"><i class="fa fa-sign-out"></i>{{ _("Sign Out") }}</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="mobile_menu">
+                <a class="page-scroll" href="{{ url_for("PricingView:index", lang_code=g.current_lang) }}"><i class="fa fa-credit-card"></i>{{ _("Pricing") }}</a>
+            </li>
+            <li class="mobile_menu">
+                <a class="page-scroll" href="{{ url_for("LightboxesView:get", lang_code=g.current_lang) }}"><i class="fa fa-lightbulb-o"></i>{{ _("Lightboxes") }}</a>
+            </li>
+            <li class="mobile_menu">
+                <a class="page-scroll" href="{{ url_for("ProfileView:index", lang_code=g.current_lang) }}"><i class="fa fa-cog"></i>{{ _("Account settings") }}</a>
+            </li>
+            <li class="mobile_menu">
+                <a class="page-scroll" href="{{ url_for("DownloadHistoryView:index", lang_code=g.current_lang) }}"><i class="fa fa-download"></i>{{ _("Download History") }}</a>
+            </li>
+            <li class="mobile_menu">
+                <a class="page-scroll" href="{{ url_for("ProfileView:plans", lang_code=g.current_lang) }}"><i class="fa fa-clock-o"></i>{{ _("Plans") }}</a>
+            </li>
+            <li class="mobile_menu">
+                <a class="page-scroll" href="{{ url_for("ProfileView:billing", lang_code=g.current_lang) }}"><i class="fa fa-edit"></i>{{ _("Billing") }}</a>
+            </li>
+            <li class="mobile_menu">
+                <a class="page-scroll" href="{{ url_for("ProfileView:purchase_history", lang_code=g.current_lang) }}"><i class="fa fa-history"></i>{{ _("Purchase history") }}</a>
+            </li>
+            <li class="mobile_menu">
+                <a class="page-scroll" href="{{ url_for("ProfileView:earnings", lang_code=g.current_lang, tabs="app") }}"><i class="fa fa-money"></i>{{ _("Earnings") }}</a>
+            </li>
+           <li class="mobile_menu">
+               <a href="{{ url_for("UserView:logout", lang_code=g.current_lang) }}"><i class="fa fa-sign-out"></i>{{ _("Sign Out") }}</a>
+           </li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>
+{% endblock header %}
+
+{% block search_form %} {% endblock search_form %}
+
+{% block profile_menu %}  {% endblock profile_menu %}
+
+{% block content %} {% endblock content %}
+
+{% block profile_menu_bottom %}  {% endblock profile_menu_bottom %}
+
+{% block footer %}
+<footer class="section-footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-blocks-container">
+                <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-3 col-sm-offset-1 first-footer-block">
+                    <div class="footer-block">
+                        <p class="list-title">{{_("Help") }}</p>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="{{ url_for("ContactUsView:index", lang_code=g.current_lang) }}">{{ _("Contact us") }}</a>
+                            </li>
+                        </ul>
+                        <p class="follow-us-text">{{ _("Follow Us") }}</p>
+
+                        <div class="follow-us">
+                            <ul class="list-unstyled list-inline">
+                                <li>
+                                    <a href="https://www.facebook.com/photostockapp/">
+                                        <i class="fa fa-facebook-official"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/photostockapp/">
+                                        <i class="fa fa-twitter-square"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/photostockapp/">
+                                        <i class="fa fa-instagram"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-3 col-sm-offset-1">
+                    <div class="footer-block">
+                        <p class="list-title">{{ _("Select a language") }}</p>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="#">{{ _("English") }}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-3 col-sm-offset-1">
+                    <div class="footer-block">
+                        <p class="list-title">{{ _("Legal") }}</p>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="{{ url_for("TermsOfUseView:index", lang_code=g.current_lang) }}">{{ _("Website Terms of Use") }}</a>
+                            </li>
+                            <li>
+                                <a href="{{ url_for("PrivacyPolicyView:index", lang_code=g.current_lang) }}">{{ _("Privacy Policy") }}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="inc">
+                <p>{{ _("&copy; 2016 photostock, Inc - All rights reserved") }}</p>
+            </div>
+        </div>
+    </div>
+</footer>
+{% endblock footer %}
+<script src="{{ url_for(".static", filename="assets/plugins/jquery/jquery.js") }}"></script>
+<script src="{{ url_for(".static", filename="assets/plugins/bootstrap/bootstrap.min.js") }}"></script>
+<script src="{{ url_for(".static", filename="assets/js/main.js") }}"></script>
+{% block scripts_under_content %} {% endblock scripts_under_content %}
+</body>
+</html>

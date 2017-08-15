@@ -1,0 +1,140 @@
+.section-footer ul li a {
+    color: #616161;
+    font-size: 12px;
+}
+
+.section-footer .inc {
+    color: #9d9d9d;
+    text-align: center;
+}
+
+.section-footer .inc p {
+    font-size: 12px;
+}
+
+.section-footer .list-inline {
+    display: inline;
+}
+
+.section-footer .social-logo {
+    width: 20px;
+    height: 20px;
+}
+
+.section-footer .list-title {
+    color: #7e7e7e;
+    font-size: 15px;
+}
+
+.section-footer .footer-info span, .section-footer .footer-info b {
+    vertical-align: middle;
+}
+
+.section-footer .footer-info {
+    margin-bottom: 23px;
+
+    font-size: 13px;
+    color: #9c9c9c;
+    text-align: center;
+}
+
+.section-footer {
+    padding-top: 17px;
+    background-color: #f4f4f4;
+    border-top: 2px solid #cccccc;
+}
+
+.section-footer span#stats + b {
+    margin-left: 9px;
+}
+
+.section-footer .small-stats + b {
+    font-size: 24px !important;
+}
+
+.section-footer span#stats {
+    color: #6c6c6c;
+    font-size: 14px;
+}
+
+.section-footer .footer-info b {
+    margin-right: 4px;
+    color: #6b6d6a;
+    font-size: 17px;
+}
+
+.section-footer .footer-info span:last-child {
+}
+
+.section-footer .footer-info .small-stats {
+    margin-left: -3px;
+}
+
+.section-footer .footer-block {
+    white-space: nowrap;
+}
+
+.section-footer .follow-us-text {
+    color: #7e7e7e;
+    margin-bottom: 9px;
+    margin-top: 18px;
+}
+
+.section-footer .follow-us {
+    margin-left: 2px;
+}
+
+@media (max-width: 992px) {
+
+    .section-footer .list-inline > li {
+        padding: 0;
+    }
+}
+
+@media (min-width: 992px) {
+    .section-footer .footer-info .small-stats {
+        margin-right: 41px;
+    }
+
+    .section-footer .first-footer-block {
+        margin-left: 5% !important;
+    }
+
+    .section-footer .footer-info {
+        padding-left: 60px;
+    }
+
+    .section-footer .follow-us ul li {
+        padding: 0 3px;
+    }
+
+    .section-footer .footer-blocks-container {
+        width: 962px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-footer .footer-info {
+        padding: 0 15px;
+    }
+
+    .section-footer .footer-block {
+        padding: 10px;
+        border-bottom: 1px solid #b6b6b6;
+    }
+}
+
+@media (min-width: 768px) {
+    .section-footer .inc {
+        margin-top: 90px;
+    }
+
+    .section-footer .first-footer-block {
+        margin-left: 3%;
+    }
+
+    .section-footer {
+        width: 100%;
+    }
+}

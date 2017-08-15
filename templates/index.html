@@ -1,0 +1,182 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <section class="big-search-section">
+        <div class="big-search-bg">
+            <div class="container">
+                <div class="row">
+                    <form action="{{ url_for("IndexView:index", lang_code=g.current_lang) }}" class="big-search-block" method="POST">
+                        {{ search_form.csrf_token }}
+                        {{ search_form.keyword(class_="search-field", placeholder=_("Find the perfect photos you are looking for...")) }}
+                        {{ search_form.quick_search_btn(class_="pagination-pages grey-button") }}
+                    </form>
+                    <a href="{{ url_for("HowItWorksView:index", lang_code=g.current_lang) }}">
+                        <div class="how-it-works">{{ _("How it works") }}</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Big-search -->
+
+    <section class="category-galleries">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-11 col-lg-offset-1">
+                    <ul class="nav nav-tabs categories-tabs mobile_tabs">
+                        {% for tag in g.gallery %}
+                        {% if g.gallery[tag].iamges %}
+                            <li><span style="background: url('{{ g.gallery[tag].images[range(1, g.gallery[tag].images | length) | random].thumb_url }}') no-repeat 50% 50%; background-size: 100%;"></span><a href="{{ url_for("SearchView:search_results", lang_code=g.current_lang, keyword=tag, _external=True) }}">{{ tag }}<i class="fa fa-angle-right"></i></a></li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                    <ul class="nav nav-tabs categories-tabs">
+                        <li class="active"><a data-toggle="tab" data-tag="all" href="javascript:void(0)">{{ _("All") }}</a></li>
+                        {% for tag in g.gallery %}
+                            <li><a data-toggle="tab" data-tag="{{ tag }}" href="javascript:void(0)">{{ tag }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="col-lg-12 uneven-gallery-section">
+                    <div class="layout">
+                        <div id="freewall" class="free-wall">
+                            {% for item in g.all_img %}
+                            <a href="{{ url_for("ImageDetailsView:get", lang_code=g.current_lang, token=item.token) }}" class='brick' style='width: {{ range(100, 400) | random }}px; height: {{ range(100, 400) | random }}px; background-image: url({{ item.thumb_url }})'></a>
+                            {% endfor %}
+                        </div>
+                        <div id="freewall_tag" class="free-wall"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="best-works-section">
+        <div class="container">
+            <div class="row">
+                {% if g.user.is_anonymous %}
+                <div class="col-lg-11 col-lg-offset-1">
+                    <div class="col-lg-7 col-md-7 best-works">
+                        <div class="best-work">
+                            <a href="{{ url_for("ImageDetailsView:get", lang_code=g.current_lang, token=g.free_image_token) }}" alt="">
+                                <img src="{{ g.free_image_thumb | thumb_url }}" alt="">
+                            </a>
+
+                            <p>{{ _("Free Photo of the Week") }}</p>
+
+                            <div class="image-data">
+                                <span>&#xA9; </span>
+                                <a href="{{ url_for("SearchView:search_results", lang_code=g.current_lang, author=g.free_image_userid) }}">{{ g.free_image_user }}</a>
+                                <a href="{{ url_for("ImageDetailsView:get", lang_code=g.current_lang, token=g.free_image_token) }}">{{ _("Download") }}</a>
+                            </div>
+                        </div>
+                        <div class="best-work">
+                            <a href="{{ url_for("SearchView:search_results", lang_code=g.current_lang, author=g.most_downloaded_userid) }}" alt="">
+                                <img src="{{ g.most_downloaded_thumb | thumb_url }}" alt="">
+                            </a>
+
+                            <p>{{ _("Most downloaded of the Week") }}</p>
+
+                            <div class="image-data">
+                                <span>&#xA9; </span>
+                                <a href="{{ url_for("SearchView:search_results", lang_code=g.current_lang, author=g.most_downloaded_userid) }}">{{ g.most_downloaded_user }}</a>
+                                <a href="{{ url_for("ImageDetailsView:get", lang_code=g.current_lang, token=g.most_downloaded_token) }}">{{ _("Buy") }}</a>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <!-- Create account form -->
+                    <div class="col-lg-4 col-md-4  col-sm-12 create-account-form">
+                        <h2 class="section-heading">{{ _("Sign up and get free content every week.") }}</h2>
+
+                        <form data-toggle="validator" role="form" data-focus="false" data-disable="false" action="{{ url_for("UserView:registration", lang_code=g.current_lang) }}" method="POST">
+                            {{ register_form.csrf_token }}
+                            <div class="form-group{% if register_form.username.errors %} has-error{% endif %}">
+                                {{ register_form.username(class_="form-control", required=True, placeholder=_("Username")) }}
+                                {% if register_form.username.errors %}<span class="help-block">{{ register_form.username.errors[0] }}</span>{% endif %}
+                            </div>
+
+                            <div class="form-group{% if register_form.email.errors %} has-error{% endif %}">
+                                {{ register_form.email(class_="form-control", required=True, placeholder=_("Email Address")) }}
+                                {% if register_form.email.errors %}<span class="help-block">{{ register_form.email.errors[0] }}</span>{% endif %}
+                            </div>
+
+                            <div class="form-group{% if register_form.password.errors %} has-error{% endif %}">
+                                {{ register_form.password(class_="form-control", data_minlength="6", required=True, placeholder=_("Password")) }}
+                                {% if register_form.password.errors %}<span class="help-block">{{ register_form.password.errors[0] }}</span>{% endif %}
+                            </div>
+
+                            <div class="form-group">
+                                <div class="checkbox">
+                                    <label for="terms" class="agree-text">
+                                        <input type="checkbox" id="terms" data-error="{{ _("Before you wreck yourself") }}" required>
+                                        {{ _("I agree to photostock's")}} <a href="{{ url_for("TermsOfUseView:index", lang_code=g.current_lang) }}">{{ _("Website Terms of Use") }}</a> {{ _(",")}}
+                                        <a href="{{ url_for("PrivacyPolicyView:index", lang_code=g.current_lang) }}">{{ _("Privacy Policy") }}</a> {{ _("to receive emails that I can opt out of at any time.")}}
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                {{ register_form.register_btn(class_="btn btn-primary red-button") }}
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Create account form -->
+                </div>
+                {% else %}
+                <div class="col-lg-12 col-lg-offset-1">
+                    <div class="col-lg-2 col-md-2 hidden-sm hidden-xs"></div>
+                    <div class="best-works col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="best-work">
+                            <a href="{{ url_for("ImageDetailsView:get", lang_code=g.current_lang, token=g.free_image_token) }}" alt="">
+                                <img src="{{ g.free_image_thumb | thumb_url }}" alt="">
+                            </a>
+
+                            <p>{{ _("Free Photo of the Week") }}</p>
+
+                            <div class="image-data">
+                                <span>&#xA9; </span>
+                                <a href="{{ url_for("SearchView:search_results", lang_code=g.current_lang, author=g.free_image_userid) }}">{{ g.free_image_user }}</a>
+                                <a href="{{ url_for("ImageDetailsView:get", lang_code=g.current_lang, token=g.free_image_token) }}">{{ _("Download") }}</a>
+                            </div>
+                        </div>
+                        <div class="best-work">
+                            <a href="{{ url_for("ImageDetailsView:get", lang_code=g.current_lang, token=g.most_downloaded_token) }}" alt="">
+                                <img src="{{ g.most_downloaded_thumb | thumb_url }}" alt="">
+                            </a>
+
+                            <p>{{ _("Most downloaded of the Week") }}</p>
+
+                            <div class="image-data">
+                                <span>&#xA9; </span>
+                                <a href="{{ url_for("SearchView:search_results", lang_code=g.current_lang, author=g.most_downloaded_userid) }}">{{ g.most_downloaded_user }}</a>
+                                <a href="{{ url_for("ImageDetailsView:get", lang_code=g.current_lang, token=g.most_downloaded_token) }}">{{ _("Buy") }}</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-sm-2 hidden-sm hidden-xs"></div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="grey-space"></div>
+    </section>
+    <script type="text/javascript">
+        {% autoescape off %}
+        var tags = {{ g.gallery }};
+        {% endautoescape %}
+    </script>
+
+{% endblock content %}
+{% block scripts_under_content %}
+    <script type="text/javascript" charset="utf-8">
+        var current_lang = '{{ g.current_lang }}';
+    </script>
+    <script src="{{ url_for(".static", filename="assets/plugins/validator/validator.min.js") }}"></script>
+    <script src="{{ url_for(".static", filename="assets/plugins/freewall/freewall.min.js") }}"></script>
+    <script src="{{ url_for(".static", filename="assets/plugins/auto-complete/auto-complete.min.js") }}"></script>
+    <script src="{{ url_for(".static", filename="assets/js/autocomplete.js") }}"></script>
+    <script src="{{ url_for(".static", filename="assets/js/welcomePageCtrl.js") }}"></script>
+{% endblock scripts_under_content %}
+

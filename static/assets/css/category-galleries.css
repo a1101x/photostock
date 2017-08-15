@@ -1,0 +1,277 @@
+.category-galleries {
+    height: 638px;
+    border-top: solid 7px #e7eded;
+}
+
+.category-galleries .categories-tabs {
+    margin-top: 34px;
+    border-bottom: none;
+}
+
+.category-galleries .mobile_tabs {
+    display: none;
+}
+
+.category-galleries .categories-tabs li.active {
+    position: relative;
+}
+
+.category-galleries .categories-tabs li.active:after {
+    top: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(136, 183, 213, 0);
+    border-top-color: #b4b5b9;
+    border-width: 10px;
+    margin-left: -10px;
+}
+
+.category-galleries .categories-tabs > li:first-child a {
+    border-radius: 5px 0 0 5px;
+}
+
+.category-galleries .categories-tabs > li:last-child a {
+    border-radius: 0 5px 5px 0;
+}
+
+.category-galleries .categories-tabs li.active:before {
+    border-color: rgba(194, 225, 245, 0);
+    border-top-color: #c2e1f5;
+    border-width: 36px;
+    margin-left: -36px;
+}
+
+.category-galleries .categories-tabs li {
+    width: 13%;
+    height: 40px;
+}
+
+.category-galleries .categories-tabs li:first-child:not(.active) .category-galleries .categories-tabs li.active a {
+    background: #0088CC !important;
+}
+
+.category-galleries .categories-tabs li:not(:first-child) a {
+    border-left: 0;
+}
+
+.category-galleries .categories-tabs li a {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 35px;
+    padding: 0 7px;
+    height: 40px;
+    border: 1px solid #b4b5b9;
+    text-align: center;
+    margin: 0;
+    font-size: 20px;
+    color: #6d6d6d;
+    border-radius: 0px;
+    background: #fdfdfd; /* Old browsers */
+    background: -moz-linear-gradient(top, #fdfdfd 0%, #e2e2e2 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #fdfdfd 0%, #e2e2e2 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #fdfdfd 0%, #e2e2e2 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fdfdfd', endColorstr='#e2e2e2', GradientType=0); /* IE6-9 */
+
+}
+.category-galleries .categories-tabs li span {
+    display: none;
+}
+
+.category-galleries .categories-tabs li.active a {
+    border: 1px solid #b4b5b9;
+    background: #b4b5b9;
+    color: #fff;
+}
+
+.uneven-gallery-section {
+    padding: 0 10px;
+}
+
+.category-galleries .categories-tabs li:nth-child(2) {
+
+}
+
+.category-galleries .categories-tabs li:nth-child(3) {
+
+}
+
+.category-galleries .categories-tabs li:nth-child(4) {
+    width: 15.5%;
+}
+
+.category-galleries .categories-tabs li:nth-child(5) {
+    width: 11.5%;
+}
+
+.category-galleries .categories-tabs li:nth-child(6) {
+
+}
+
+.category-galleries .categories-tabs li:last-child {
+    width: 12%;
+
+}
+
+@media (max-width: 1200px) {
+    .category-galleries .categories-tabs li {
+        width: 15%;
+    }
+}
+
+@media (max-width: 992px) {
+    .category-galleries .categories-tabs li {
+        width: 15.1%;
+    }
+
+    .category-galleries .categories-tabs li a {
+        font-size: 18px;
+    }
+}
+
+.category-galleries .save-to-lightbox {
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+    .category-galleries {
+        height: auto;
+    }
+    .category-galleries .save-to-lightbox {
+        display: block;
+        height: 50px;
+        bottom: 10px;
+        z-index: 10;
+        right: 20px;
+        position: absolute;
+        width: 250px;
+        background-color: #1dc4ff;
+        text-align: center;
+        color: #fff;
+        line-height: 46px;
+    }
+
+    .category-galleries .categories-tabs {
+        display: none;
+        margin: 0 -15px;
+    }
+    .category-galleries .mobile_tabs {
+        display: block;
+    }
+
+    .category-galleries .categories-tabs li {
+        margin: 3px 0;
+    }
+    .category-galleries .categories-tabs li a {
+        position: relative;
+        z-index: 9;
+        background: none;
+        border-radius: 0 !important;
+        text-shadow: 1px 1.732px 6px rgba(0, 0, 0, 4);
+    }
+    .category-galleries .categories-tabs li span {
+        position: absolute;
+        z-index: 8;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+    .category-galleries .categories-tabs li.active:after {
+        display: none;
+    }
+
+    .category-galleries .categories-tabs li:not(:first-child) a {
+        display: block;
+        height: 100%;
+        line-height: 100px;
+        border: none;
+        color: #fff!important;
+        text-align: left;
+        font-size: 3em;
+        padding: 0 20px;
+    }
+    .category-galleries .categories-tabs li:not(:first-child) a .fa {
+        float: right;
+        line-height: 106px;
+    }
+
+    .category-galleries .categories-tabs li:first-child {
+        display: none;
+    }
+
+    .category-galleries .categories-tabs li {
+        width: 100% !important;
+        height: 106px;
+        background-color: #333333;
+    }
+
+    .category-galleries .categories-tabs li a {
+        font-size: 21px;
+        color: #6d6d6d!important;
+        background-color: transparent!important;
+    }
+
+    .uneven-gallery-section {
+        display: none;
+    }
+}
+
+/*-- uneven gallery  --*/
+.layout {
+    margin-top: 40px;
+    height: 435px;
+    overflow: hidden;
+}
+
+.header {
+    height: 100%;
+}
+
+.free-wall {
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes start {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@-webkit-keyframes start {
+    from {
+        -webkit-transform: scale(0);
+    }
+    to {
+        -webkit-transform: scale(1);
+    }
+}
+
+.free-wall .brick[data-state="init"] {
+    display: none;
+}
+
+.free-wall .brick[data-state="start"] {
+    display: block;
+    animation: start 0.5s;
+    -webkit-animation: start 0.5s;
+}
+
+.free-wall .brick[data-state="move"] {
+    transition: top 0.5s, left 0.5s, width 0.5s, height 0.5s;
+    -webkit-transition: top 0.5s, left 0.5s, width 0.5s, height 0.5s;
+}
+
+/*-- uneven gallery  --*/

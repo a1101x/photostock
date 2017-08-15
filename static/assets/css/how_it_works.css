@@ -1,0 +1,72 @@
+.big-howto-section {
+    position: relative;
+}
+
+.big-howto-section .big-howto-bg {
+    height: 535px;
+    background: url(../img/how_it_works/bridge.png) no-repeat 50% 50% / cover;
+}
+
+.big-howto-section .slogan {
+    text-align: center;
+    background-color: #1dc4ff;
+    border-top: 1px solid #56aec4;
+    border-bottom: 1px solid #0c0e0d;
+}
+
+.big-howto-section .slogan p {
+    margin-top: 27px;
+    margin-bottom: 23px;
+    color: #fff;
+    font-size: 29px;
+}
+
+.big-howto-text {
+    font-size: 24px;
+    position: relative;
+    top: 80%;
+    margin-left: 15px;
+    width: 70%;
+    text-align: justify;
+}
+
+.howto-text {
+    margin-left: 15px;
+    margin-right: 15px;
+    text-align: justify;
+}
+
+.howto-leftimg {
+    float: left;
+    margin: 0px 35px 0 0;
+}
+
+.howto-app {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.howto-badge {
+    margin: 10px 10px 30px 10px;
+}
+
+.howto-hr {
+    width: 90%;
+    border-top: 2px solid rgba(159, 159, 159, 0.47);
+}
+
+.howto-p {
+    font-size: 18px;
+    margin: 22px 0 0 0;
+}
+
+.howto-p.big-p {
+    font-size: 18px;
+    margin: 0 0 0 0;
+}
+
+.howto-p.howto-f {
+    font-size: 18px;
+    margin: 22px 0 20px 0;
+}

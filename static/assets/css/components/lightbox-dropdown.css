@@ -1,0 +1,165 @@
+.lightbox-dropdown {
+    position: relative;
+    text-align: center;
+    margin-right: 25px;
+    width: 45%;
+    float: right;
+}
+
+.light-box {
+    padding: 11px 0 0 0;
+    margin-left: 8px;
+    position: relative;
+    display: block;
+}
+
+.light-box .fa-2x,
+.light-box-header .fa-2x {
+    font-size: 20px;
+    position: relative;
+    top: 2px;
+    margin: 0 5px 0 0;
+}
+
+/*.light-box:after {*/
+    /*content: attr(lightbox-after);*/
+    /*top: 46%;*/
+    /*right: 8px;*/
+    /*content: " ";*/
+    /*height: 0;*/
+    /*width: 0;*/
+    /*position: absolute;*/
+    /*border-style: solid;*/
+    /*border-width: 7px 4px 0 4px;*/
+    /*border-color: #666 transparent transparent transparent;*/
+
+/*}*/
+
+.lightbox-dropdown .lightbox-dropdown-form .already-logged-in input[type="text"] {
+    width: 65%;
+    height: 26px;
+    border: 1px solid #ccc;
+}
+
+.lightbox-dropdown .lightbox-dropdown-form .already-logged-in input[type="submit"] {
+    float: right;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-weight: 900;
+    width: 30%;
+    height: 26px;
+    color: #64676b;
+    margin: 0px 0px 10px 5px;
+    background: #ffffff; /* Old browsers */
+    background: -moz-linear-gradient(top, #ffffff 0%, #e2e3e4 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #ffffff 0%, #e2e3e4 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #ffffff 0%, #e2e3e4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e2e3e4', GradientType=0); /* IE6-9 */
+
+}
+
+.lightbox-dropdown .lightbox-dropdown-form .already-logged-in input[type="submit"]:hover {
+    background: #ffffff; /* Old browsers */
+    background: -moz-linear-gradient(top, #ffffff 0%, #e1e2e3 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #ffffff 0%, #e1e2e3 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #ffffff 0%, #e1e2e3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e1e2e3', GradientType=0); /* IE6-9 */
+
+}
+
+.lightbox-dropdown .lightbox-dropdown-form .already-logged-in input {
+    display: inline-block;
+}
+
+.lightbox-dropdown .lightbox-dropdown-form .already-logged-in ul {
+    margin-left: 0 !important;
+}
+
+.lightbox-dropdown .lightbox-dropdown-form .already-logged-in {
+    padding: 0px 10px;
+}
+
+.lightbox-dropdown .lightbox-dropdown-form {
+    border-radius: 5px;
+    overflow: hidden;
+    color: #383838;
+    z-index: 11;
+    top: 17px;
+    right: 0px;
+    background-color: #fff;
+    position: absolute;
+}
+.lightbox-dropdown .lightbox-dropdown-form .add-lightbox {
+    margin: 10px 0 0;
+}
+
+.lightbox-dropdown .lightbox-dropdown-form .not-looged-in p:nth-of-type(1) {
+    margin-bottom: 1px;
+}
+
+.lightbox-dropdown .lightbox-dropdown-form .not-looged-in p:nth-of-type(2) {
+    font-size: 11px;
+}
+
+.lightbox-dropdown .lightbox-dropdown-form .not-looged-in {
+    width: 323px;
+    padding: 1px 12px 32px;
+}
+
+.lightbox-dropdown .lightbox-dropdown-form .light-box-header {
+    text-align: left;
+    position: relative;
+    height: 31px;
+    color: #4b4b4b;
+    padding: 5px 0 0 10px;
+}
+.lightbox-dropdown .lightbox-dropdown-form .light-box-header p {
+    white-space: nowrap;
+}
+
+.lightbox-dropdown .lightboxes-list {
+    text-align: left;
+    max-height: 100px;
+    overflow: auto;
+}
+
+.lightbox-dropdown .lightboxes-list li a {
+    color: #4b4b4b;
+}
+
+.lightbox-dropdown .lightbox-dropdown-form .light-box-header .boxclose {
+    float: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    font-size: 20px;
+    color: #9a9a9a;
+    display: inline-block;
+    line-height: 0px;
+    padding: 15px 9px;
+}
+
+.lightbox-dropdown .lightbox-dropdown-form .logged-in-links a:nth-of-type(1) {
+    padding-left: 53px;
+    padding-right: 21px;
+}
+
+@media (max-width: 480px) {
+    .lightbox-dropdown .lightbox-dropdown-form {
+        right: none;
+        left: 78px;
+        top:0;
+    }
+}
+
+/*.lightbox-dropdown .lightbox-dropdown-form .light-box-header .boxclose:before {*/
+    /*content: "×";*/
+/*}*/
+
+/*@media (max-width: 768px) {*/
+/*.lightbox-dropdown .lightbox-dropdown-form {*/
+/*top: 58px;*/
+/*left: -153px;*/
+/*}*/
+/*}*/

@@ -1,0 +1,87 @@
+.create-account-section {
+    padding: 67px 0 80px;
+}
+
+.create-account-section .form-group {
+    margin-bottom: 0;
+}
+
+.create-account-section h2 {
+    margin-bottom: 11px;
+    margin-top: 23px;
+    color: #403e3f;
+    font-weight: 700;
+    font-size: 23px;
+}
+
+.create-account-section form input[type="text"], .create-account-section form input[type="password"], .create-account-section form input[type="email"] {
+    width: 309px;
+    margin-bottom: 4px;
+}
+
+@-moz-document url-prefix() {
+    input[type="checkbox"] {
+        transform: scale(0.7);
+        margin-top: -3px;
+    }
+}
+
+@media (min-width: 992px) {
+    .create-account-section .sign-in-form input {
+        width: 100px;
+    }
+
+    .create-account-section .sign-in-form button {
+        width: 100px;
+    }
+
+    .create-account-section .create-account-form button {
+        width: 157px;
+    }
+
+    .create-account-section .sign-in-form {
+        padding-left: 10px;
+    }
+
+    .create-account-section .create-account-form {
+        padding-left: 27px;
+    }
+
+    .create-account-section .create-account-form:after {
+        content: '';
+        position: absolute;
+        top: 14px;
+        height: 356px;
+        border-left: 1px solid #dedede;
+        right: -39px;
+    }
+}
+
+@media (max-width: 992px) {
+    .create-account-section .sign-in-form button {
+        width: 50%;
+    }
+
+    .create-account-section .create-account-form button {
+        width: 100%;
+    }
+
+    .create-account-section form input[type="text"], .create-account-section form input[type="password"], .create-account-section form input[type="email"] {
+        width: 100%;
+    }
+}
+
+.create-account-section form label {
+    font-size: 12.1px;
+    margin-bottom: 3px;
+}
+
+.create-account-section form label, .create-account-section form input {
+    display: block;
+}
+
+.create-account-section .create-account-form form input[type="submit"] {
+    padding: 8px 29px;
+    margin-top: 27px;
+}
+

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <section class="big-howto-section">
+        <div class="container">
+            <div class="big-howto-bg">
+                <div class="big-howto-text"><p class="howto-p big-p">{{ _("ShalleStock is the microstock agency fed by non-professional pics coming from photostockApp: the platform enabling non-professional photographers to trade photo’s underlying rights. Each pic uploaded on photostockApp is represented by two exploitation rights, when both are purchased by two different users, the photo leaves photostockApp and enters photostockStock.") }}
+                </p></div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="howto-text">
+                <p class="howto-p">{{ _("Every photo on photostockStock is owned by two photostockApp members; if the photo is sold by photostockStock each owner earns 50") }}%
+                {{ _(" of the total Royalties and photostockstock will charge a 25") }}%{{ _(" commission (VAT inclusive).") }}
+                {{ _("photostockStocks enables photostockApp members to ‘invest’ in photos and earn royalties on other photographers’ works. If you are a photostockApp member you don’t need to register, you can login to photostockStock using your photostockApp credentials.") }}
+                </p>
+                <div>
+                    <img src="{{ url_for('.static', filename='assets/img/how_it_works/macipad.png') }}" alt="" width="35%" height="35%" class="howto-leftimg"/>
+                    <p class="howto-p">{{ _("If you are looking for photos on photostockStock you may choose between many non-professional photos that have been selected by other non-professional photographers via the purchase of the underlying copyrights.") }}</p>
+                    <p class="howto-p">{{ _("ShalleStock is the microstock agency fed by non-professional pics coming from photostockApp: the platform enabling non-professional photographers to trade photo’s underlying rights. Each pic uploaded on photostockApp is represented by two exploitation rights, when both are purchased by two different users,the photo leaves photostockApp and enters photostockStock. Every photo on photostockStock is a owned by two photostockApp members; if the photo is sold by photostockStock each owner earns 50") }}%{{ _(" of the total Royalties and photostock stock will charge a 25") }}%{{ _(" commission (VAT inclusive).") }}</p>
+                </div>
+                <div>
+                    <p class="howto-p howto-f">{{ _("photostockStocks enables photostockApp members to ‘invest’ in photos and earn royalties on other photographer's works. If you are a photostockApp member you don’t need to register, you can login to photostockStock using your photostockApp credentials. If you are not a photostockApp user you need to register to access photostockStock. If you are looking for photos on photostockStock you may choose between many non-professional photos that have been selected by other non-professional photographers via the purchase of the underlying copyrights.") }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <hr class="howto-hr"/>
+            <div class="howto-app">
+                <p class="howto-p">{{ _("Download photostock App for Android and Apple") }}</p>
+                <img src="{{ url_for('.static', filename='assets/img/how_it_works/badge_android.png') }}" alt="" width="135" height="40" class="howto-badge"/>
+                <img src="{{ url_for('.static', filename='assets/img/how_it_works/badge_apple.svg') }}" alt="" class="howto-badge"/>
+            </div>
+        </div>
+    </section>
+{% endblock content %}
+
+{% block scripts_under_content %}
+    <script type="text/javascript" charset="utf-8">
+        var current_lang = '{{ g.current_lang }}';
+    </script>
+{% endblock scripts_under_content %}
+

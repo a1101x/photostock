@@ -1,0 +1,349 @@
+.results-search a {
+    line-height: 35px;
+    margin-left: 15px;
+}
+
+.container .results-search {
+    margin-top: 9px;
+    margin-left: 0;
+}
+
+.results-search {
+    position: relative;
+    margin-top: 9px;
+    margin-left: 13px;
+    margin-bottom: 10px;
+}
+
+.results-search .search-block {
+    border-radius: 4px;
+    float: left;
+    display: inline-block;
+    border: 4px solid #e6e6e6;
+}
+
+.results-search ::-webkit-input-placeholder {
+    color: #a8a8a8;
+}
+
+.results-search ::-moz-placeholder {
+    color: #a8a8a8;
+}
+
+/* Firefox 19+ */
+.results-search :-moz-placeholder {
+    color: #a8a8a8;
+}
+
+/* Firefox 18- */
+.results-search :-ms-input-placeholder {
+    color: #a8a8a8;
+}
+
+.results-search .search-block input[type="submit"] {
+    background-image: url("../../img/search-results/loop.png");
+    background: url("../../img/search-results/loop.png") center center no-repeat, -moz-linear-gradient(top, #898b8f 0%, #64676c 100%); /* FF3.6-15 */
+    background: url("../../img/search-results/loop.png") center center no-repeat, -webkit-linear-gradient(top, #898b8f 0%, #64676c 100%); /* Chrome10-25,Safari5.1-6 */
+    background: url("../../img/search-results/loop.png") center center no-repeat, linear-gradient(to bottom, #898b8f 0%, #64676c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background-size: 20px, 100%;
+    float: left;
+    width: 57px;
+    height: 30px;
+    margin: 0;
+    border-radius: 0 3px 3px 0;
+}
+
+.results-search .search-block input[type="text"] {
+    outline: none;
+    padding: 0 10px;
+    float: left;
+    height: 30px;
+    width: 463px;
+    border: 1px solid #bababa;
+}
+
+.results-search > div > p {
+    font-size: 26px;
+    line-height: 35px;
+    text-align: right;
+    margin-right: 40px;
+}
+
+.results-search .search-filters {
+    display: inline-block;
+    position: relative;
+}
+
+.results-search .filters_dropdown:after, .results-search .filters_dropdown:before {
+    bottom: 100%;
+    left: 293px;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.results-search .filters_dropdown:after {
+    border-color: rgba(255, 255, 255, 0);
+    border-bottom-color: #ffffff;
+    border-width: 20px;
+    margin-left: -20px;
+}
+
+.results-search .filters_dropdown:before {
+    border-color: rgba(245, 54, 213, 0);
+    border-bottom-color: #ccc;
+    border-width: 21px;
+    margin-left: -21px;
+}
+
+.results-search .filters_dropdown {
+    display: none;
+    -webkit-box-shadow: 0px 6px 10px -1px rgba(0, 0, 0, 0.54);
+    -moz-box-shadow: 0px 6px 10px -1px rgba(0, 0, 0, 0.54);
+    box-shadow: 0px 6px 10px -1px rgba(0, 0, 0, 0.54);
+    position: absolute;
+    z-index: 111;
+    width: 348px;
+    top: 49px;
+    right: 0;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 20px 10px 10px;
+    border-radius: 4px;
+}
+
+.results-search .filters_dropdown button#color-select {
+    background: url("/static/assets/img/search-results/color.png") no-repeat !important;
+    height: 21px;
+    width: 20px;
+    border: none;
+    outline: none;
+}
+
+.results-search .filters_dropdown .checkbox-group label {
+    margin-bottom: 0;
+}
+
+.results-search .filters_dropdown .checkbox-group {
+    width: 55%;
+    margin-bottom: 0;
+    text-align: left;
+    display: inline-block;
+}
+
+.results-search .filters_dropdown > .form-group {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.results-search .filters_dropdown > .form-group > label {
+    font-weight: 700;
+}
+
+.results-search .filters_dropdown label[for=color] {
+    vertical-align: bottom !important;
+}
+
+.results-search .filters_dropdown label {
+    font-weight: 300;
+}
+
+.results-search .filters_dropdown > .form-group > label {
+    vertical-align: top;
+    display: inline-block;
+    width: 43%;
+    padding-right: 13px;
+    text-align: right;
+}
+
+.results-search .filters_dropdown input[type="checkbox"] {
+    display: none;
+}
+
+.results-search .filters_dropdown input[type="checkbox"] + label span:after {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
+    content: '';
+    position: absolute;
+    width: 9px;
+    height: 5px;
+    background: transparent;
+    top: 1px;
+    left: 1px;
+    border: 3px solid #000;
+    border-top: none;
+    border-right: none;
+
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.results-search .filters_dropdown input#color {
+    width: 100%;
+    height: 23px;
+    padding-left: 12px;
+    margin-right: 4px;
+}
+
+.results-search .filters_dropdown .color-wrapper:after {
+    content: '#';
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    font-size: 14px;
+    color: #aaaaaa;
+}
+
+.results-search .filters_dropdown .color-wrapper {
+    vertical-align: top;
+    position: relative;
+    width: 28%;
+    display: inline-block;
+}
+
+.results-search .filters_dropdown .form-group.form-buttons {
+    padding-left: 43%;
+    margin-top: 16px;
+    border-top: 1px solid #cccccc;
+}
+
+.results-search .filters_dropdown .form-group.form-buttons input[type="reset"] {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,e2e3e4+100 */
+    line-height: 10px;
+    color: #63666b;
+    font-weight: 900;
+    height: 27px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    background: #ffffff;
+    background: -moz-linear-gradient(top, #ffffff 0%, #e3e3e3 100%);
+    background: -webkit-linear-gradient(top, #ffffff 0%, #e3e3e3 100%);
+    background: linear-gradient(to bottom, #ffffff 0%, #e3e3e3 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e3e3e3', GradientType=0);
+    width: 69px;
+}
+
+.results-search .filters_dropdown .form-group.form-buttons .grey-button {
+    margin-top: 16px;
+    margin-bottom: 0;
+    line-height: 10px;
+    height: 25px;
+    width: 79px;
+}
+
+.results-search .filters_dropdown input[type="checkbox"] + label span {
+    position: relative;
+    display: inline-block;
+    width: 12px;
+    border-radius: 2px;
+    height: 12px;
+    margin: -1px 4px 0 0;
+    vertical-align: middle;
+    border: solid 1px #c1c1c1;
+    background-color: #e6e6e6;
+    cursor: pointer;
+}
+
+.results-search .filters_dropdown input[type="checkbox"]:checked + label span:after {
+    opacity: 1;
+}
+
+/*.results-search .filters_dropdown input[type="checkbox"]:checked + label span {*/
+/*border: solid 9px #db002f;*/
+/*!* padding: 3px; *!*/
+/*background-color: #fff;*/
+/*!* background: url(check_radio_sheet.png) -19px top no-repeat; *!*/
+/*}*/
+
+.results-search form.filters_dropdown .form-group input[type="text"] {
+    width: 52%;
+    padding: 0 4px;
+    font-size: 12px;
+    display: inline-block;
+    border-radius: 0;
+    border-color: #aaaaaa;
+    height: 21px;
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 992px) {
+
+    .results-search .filters_dropdown {
+        left: -126px;
+    }
+
+    .results-search .filters_dropdown:after, .results-search .filters_dropdown:before {
+        left: 55%;
+    }
+
+    .results-search .search-block {
+        width: 100%;
+    }
+
+    .results-search .search-block input[type="text"] {
+        width: 90%;
+    }
+
+    .results-search .search-block input[type="submit"] {
+        width: 10%;
+    }
+
+    .results-search {
+        text-align: center;
+    }
+
+    .results-search a {
+        margin: 0;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .results-search .filters_dropdown:after, .results-search .filters_dropdown:before {
+        left: 85%;
+    }
+
+    .results-search .filters_dropdown {
+        left: -167px;
+        top: 70px;
+    }
+
+    .results-search a {
+        display: none;
+    }
+
+    .results-search {
+        margin: 0;
+    }
+
+    .results-search .search-block input[type="submit"] {
+        border-style: solid;
+        border-width: 1px;
+        outline: none;
+        background-image: url("../../img/search-results/loop-black.png");
+        border-left: none;
+        border-color: #bababa;
+        box-shadow: none;
+        height: 43px;
+    }
+
+    .results-search .search-block input[type="text"] {
+        border-right: none;
+        height: 43px;
+    }
+
+    .results-search .search-block {
+        border-left-width: 8px;
+        border-right-width: 8px;
+    }
+}

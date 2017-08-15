@@ -1,0 +1,279 @@
+{% extends "base_search.html" %}
+
+{% block content %}
+
+<section class="search-results-section">
+    <div class="results-block">
+        <div class="">
+
+            <div class="results-pagination">
+                <div class="tabs-pagintaion">
+                    <div class="pagination-pages  col-lg-12 col-md-12">
+                        <span>{{ _("Page") }}</span>
+                        <form action="{{ url_for('SearchView:search_results', lang_code=g.current_lang, keyword=g.keyword, author=g.author, similar=g.similar) }}" method="post">
+                            {{ paginator_form.csrf_token }}
+                            {{ paginator_form.page(typpe='number', step='1') }}
+                            {{ paginator_form.paginator_btn(type="hidden") }}
+                        </form>
+                        <span> of {{ g.paginator.pages_amount }}</span>
+                        {% if g.paginator.page_prev %}
+                            <a class="fa fa-chevron-left" href="{{ url_for('SearchView:search_results', lang_code=g.current_lang, keyword=g.keyword, page=g.paginator.page_prev, author=g.author, similar=g.similar) }}"></a>
+                        {% else %}
+                            <a class="fa fa-chevron-left empty" href="javascript:void(0)"></a>
+                        {% endif %}
+                        {% if g.paginator.page_next %}
+                            <a class="fa fa-chevron-right" href="{{ url_for('SearchView:search_results', lang_code=g.current_lang, keyword=g.keyword, page=g.paginator.page_next, author=g.author, similar=g.similar) }}"></a>
+                        {% else %}
+                            <a class="fa fa-chevron-right empty" href="javascript:void(0)"></a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-top-pagination">
+                <div class="float-left">
+                     <div>{{ _("Search result for tags") }}: {% if g.keyword %} <strong>{{ g.keyword }}</strong> {% else %} - {% endif %} <span>({{ g.paginator.amount }})</span> </div>
+                </div>
+                <div class="clearfix"></div>
+
+            </div>
+            <div class="pagination-buttons mobile-top-pagination">
+                {% if g.paginator.page_prev %}
+                <a class="next-page grey-button"
+                   href="{{ url_for('SearchView:search_results', lang_code=g.current_lang, keyword=g.keyword, page=g.paginator.page_prev, author=g.author) }}"> <i class="fa fa-angle-left"></i> Previous Page</a>
+                {% endif %}
+                {% if g.paginator.page_next %}
+                <a class="next-page grey-button"
+                   href="{{ url_for('SearchView:search_results', lang_code=g.current_lang, keyword=g.keyword, page=g.paginator.page_next, author=g.author) }}">{{ _("Next Page") }} <i class="fa fa-angle-right"></i></a>
+                {% endif %}
+            </div>
+
+            <div class="pagination-pages-mobile">
+                <div class="float-left">
+                    {{ _("Sorted by:") }} <a href="#">asd</a>
+                </div>
+                <div class="float-right">
+                    <span>{{ _("Page") }}</span>
+                    {{ g.paginator.page }}
+                    <span> of {{ g.paginator.pages_amount }}</span>
+                    {% if g.paginator.page_prev %}
+                        <a class="fa fa-chevron-left" href="{{ url_for('SearchView:search_results', lang_code=g.current_lang, keyword=g.keyword, page=g.paginator.page_prev, author=g.author, similar=g.similar) }}"></a>
+                    {% else %}
+                        <a class="fa fa-chevron-left empty" href="javascript:void(0)"></a>
+                    {% endif %}
+                    {% if g.paginator.page_next %}
+                        <a class="fa fa-chevron-right" href="{{ url_for('SearchView:search_results', lang_code=g.current_lang, keyword=g.keyword, page=g.paginator.page_next, author=g.author, similar=g.similar) }}"></a>
+                    {% else %}
+                        <a class="fa fa-chevron-right empty" href="javascript:void(0)"></a>
+                    {% endif %}
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="counter-related">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">{{ _("Search result for tags") }}: {% if g.keyword %} <strong>{{ g.keyword }}</strong> {% else %} - {% endif %} <span>({{ g.paginator.amount }})</span> </div>
+                </div>
+            </div>
+            <div class="Collage effect-parent">
+                {% for img in g.img_list %}
+                <div class="Image_Wrapper">
+                    <a>
+                        <img src="{{ img.thumb_url }}" data-token="{{ img.token }}">
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="pagination-buttons">
+        {% if g.paginator.page_prev %}
+            <a class="next-page grey-button" href="{{ url_for('SearchView:search_results', lang_code=g.current_lang, keyword=g.keyword, page=g.paginator.page_prev, author=g.author, similar=g.similar) }}"><i class="fa fa-angle-left"></i> Previous Page</a>
+        {% endif %}
+        {% if g.paginator.page_next %}
+            <a class="next-page grey-button" href="{{ url_for('SearchView:search_results', lang_code=g.current_lang, keyword=g.keyword, page=g.paginator.page_next, author=g.author, similar=g.similar) }}">{{ _("Next Page") }} <i class="fa fa-angle-right"></i></a>
+        {% endif %}
+        </div>
+        <div class="results-pagination buttom-tabs-pagintaion ">
+            <div class="pagination-pages">
+                <span>{{ _("Page") }}</span>
+                    <form action="{{ url_for('SearchView:search_results', lang_code=g.current_lang, keyword=g.keyword, author=g.author) }}" method="post">
+                        {{ paginator_form.csrf_token }}
+                        {{ paginator_form.page(typpe='number', step='1') }}
+                        {{ paginator_form.paginator_btn(type="hidden") }}
+                    </form>
+                <span> of {{ g.paginator.pages_amount }}</span>
+                {% if g.paginator.page_prev %}
+                    <a class="fa fa-chevron-left" href="{{ url_for('SearchView:search_results', lang_code=g.current_lang, keyword=g.keyword, page=g.paginator.page_prev, author=g.author, similar=g.similar) }}"></a>
+                {% else %}
+                    <a class="fa fa-chevron-left empty" href="javascript:void(0)"></a>
+                {% endif %}
+                {% if g.paginator.page_next %}
+                    <a class="fa fa-chevron-right" href="{{ url_for('SearchView:search_results', lang_code=g.current_lang, keyword=g.keyword, page=g.paginator.page_next, author=g.author, similar=g.similar) }}"></a>
+                {% else %}
+                    <a class="fa fa-chevron-right empty" href="javascript:void(0)"></a>
+                {% endif %}
+                <a class="next-page jump grey-button hidden-sm-down" href="{{ url_for('SearchView:search_results', lang_code=g.current_lang, keyword=g.keyword, page=g.paginator.page_next, author=g.author, similar=g.similar) }}">Jump <i class="fa fa-angle-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <script id="details-template" type="text/x-handlebars-template">
+        {% raw %}
+        <div class="result-info">
+            <div class="info-arrow"></div>
+            <a class="description-close fa fa-times"></a>
+            <div class="container">
+                <div class="result-info-block col-lg-10 col-lg-offset-1">
+                    <div class="image-profile">
+                        <div class="same-height">
+                            <div class="col-lg-8 col-md-8 col-sm-8 sol-xs-12 image-preview">
+                                <a href="/{% endraw %}{{ g.current_lang }}{% raw %}/image-details/{{token}}"><img src="{{thumb_url}}"></a>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-lg-4 col-md-4  col-sm-4 sol-xs-12 image-details">
+                                <p class="image-name">
+                                    {{title}}
+                                </p>
+                                <ul>
+                                    <li>{% endraw %}{{ _("Image ID:") }}{% raw %} <span>{{token}}</span></li> <li>{% endraw %}{{ _("Author") }}{% raw %}:
+                                        <span><a href="/{% endraw %}{{ g.current_lang }}{% raw %}/search/?author={{userName}}">{{userFullName}}</a></span>
+                                    </li>
+                                    {{#if buyers}}<li>{% endraw %}{{ _("Copyrights owners") }}{% raw %}:
+                                        {{#each buyers}}<span><a href="/{% endraw %}{{ g.current_lang }}{% raw %}/search/?author={{id}}">{{fullName}} </a></span><span class="comma">,</span> {{/each}}
+                                    {{/if}}</li>
+                                    <li>{% endraw %}{{ _("Keywords") }}{% raw %}:
+                                        {{#each tags}}
+                                            <span><a href=" {% endraw %}{{ url_for('SearchView:search_results', lang_code=g.current_lang) }}{% raw %}?keyword={{this}}">{{this}}</a></span><span class="comma">,</span>
+                                        {{/each}}
+                                    </li>
+                                    <li>{% endraw %}{{ _("Published") }}{% raw %}: <span>{{published}}</span></li>
+                                    {{#if downloads}}<li>{% endraw %}{{ _("Download") }}{% raw %}: <span>{{downloads}}</span></li>{{/if}}
+                                </ul>
+
+                                <div class="tab-content">
+
+                                    <div id="standard" class="tab-pane fade in active">
+                                        <ul>
+                                            <li>
+                                                <label for="f-option"><span>{{imageWidth}}x{{imageHeight}}</span><span></span><span>{{dpi}}dpi</span></label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="download-lightbox">
+                                        <div class="lightbox-dropdown-download"><a href="{{#if download_verify}}{{download_url}}{{else}}/{% endraw %}{{ g.current_lang }}{% raw %}/pricing/{{/if}}" id="download_btn" class="red-button red-download download_btn"><i class="fa fa-download"></i>{% endraw %}{{ _("Download") }}{% raw %}</a></div>
+                                        <div class="lightbox-dropdown">
+                                            <a class="light-box"><span><i class="fa fa-2x fa-lightbulb-o"></i>{% endraw %}{{_("Save to a Lightbox") }}</span></a>
+                                            <div class="lightbox-dropdown-form">
+                                                <div class="light-box-header">
+                                                    <p><i class="fa fa-2x fa-lightbulb-o"></i>{{ _("Save to a Lightbox") }}</p>
+                                                    <span class="fa fa-times boxclose"></span>
+                                                </div>
+                                                {% if not g.user.is_anonymous %}{% raw %}
+                                                <div class="already-logged-in">
+                                                    <ul class="lightboxes-list">
+                                                        {{#each lightboxes }}
+                                                        <li>
+                                                            <a data-lightbox_id="{{lightBoxId}}" href="javascript:void(0)">{{title}}</a>
+                                                        </li>
+                                                        {{/each}}
+                                                    </ul>
+                                                    {% endraw %}
+                                                    <div class="add-lightbox">
+                                                        {{ lightbox_form.title(placeholder=_("New Lightbox")) }}
+                                                        {{ lightbox_form.lightbox_btn(placeholder=_("Save")) }}
+                                                    </div>
+                                                    {% raw %}
+                                                </div>
+                                                {% endraw %}
+                                                {% else %}
+                                                <div class="not-looged-in">
+                                                    <p>Please Login...</p>
+                                                    <p>
+                                                        {{ _("To organize photos in lightboxes you must first register or login. Registration is Free! Lightbox allow you to categorize groups of photos and send them to your friends or colleagues.") }}
+                                                    </p>
+                                                    <div class="logged-in-links">
+                                                        <a href="{{ url_for("UserView:login",lang_code=g.current_lang, next=url_for("SearchView:search_results", lang_code=g.current_lang, keyword=g.keyword, keyword1=g.keyword)) }}{% raw %}%26token%3D{{token}}{% endraw %}">{{ _("Sign In") }}<i class="fa fa-angle-right"></i></a>
+                                                        <a href="{{ url_for("UserView:registration",lang_code=g.current_lang, next=url_for("SearchView:search_results", lang_code=g.current_lang, keyword=g.keyword)) }}{% raw %}%26token%3D{{token}}{% endraw %}">{{ _("Create an account") }} <i class="fa fa-angle-right"></i></a>
+                                                    </div>
+                                                    {% endif %}
+                                                </div>
+                                                {% raw %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="similar-same-artist">
+                            <ul class="nav nav-tabs">
+                                
+                                {{#if same_artist}}
+                                <li {{#if same_artist}}class="active"{{/if}}><a data-toggle="tab" href="#same">{% endraw %}{{ ("Same Artist") }}{% raw %}</a></li>
+                                {{/if}}
+                                {{#if similar_images}}
+                                <li {{#if same_artist}}{{else}}class="active"{{/if}}><a data-toggle="tab" href="#similar">{% endraw %}{{ _("Similar Images") }}{% raw %}</a></li>
+                                {{/if}}
+                                
+                            </ul>
+
+                            <div class="tab-content">
+                                {{#if same_artist}}
+                                <div id="same" class="tab-pane fade in active">
+                                    {{#each same_artist }}
+                                    <div class="same-block  col-md-2 col-sm-3  col-xs-4">
+                                        <div class="asd">
+                                            <div class="square">
+                                                <a href="/{% endraw %}{{ g.current_lang }}{% raw %}/image-details/{{token}}">
+                                                    <img src="{{thumb_url}}"/>
+                                                </a>
+                                            </div>
+                                            <a href="/{% endraw %}{{ g.current_lang }}{% raw %}/search/?author={{userName}}">{% endraw %}{{ _("See All") }}{% raw %}</a>
+                                        </div>
+                                    </div>
+                                    {{/each}}
+                                    <div class="clearfix"></div>
+                                </div>
+                                {{/if}}
+                                {{#if similar_images}}
+                                <div id="similar" class="tab-pane fade {{#if same_artist}}{{else}}in active{{/if}}">
+                                    {{#each similar_images }}
+                                   <div class="same-block  col-md-2 col-sm-3 col-xs-4">
+                                        <div class="asd">
+                                            <div class="square">
+                                                <a href="/{% endraw %}{{ g.current_lang }}{% raw %}/image-details/{{token}}">
+                                                    <img src="{{thumb_url}}"/>
+                                                </a>
+                                            </div>
+                                            <a href="/{% endraw %}{{ g.current_lang }}{% raw %}/search/?similar={{token}}">{% endraw %}{{ _("See All") }}{% raw %}</a>
+                                        </div>
+                                    </div>
+                                    {{/each}}
+                                    <div class="clearfix"></div>
+                                </div>
+                                {{/if}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endraw %}
+    </script>
+
+</section>
+
+{% endblock content %}
+
+{% block scripts_under_content %}
+    <script type="text/javascript" charset="utf-8">
+        var current_lang = '{{ g.current_lang }}';
+    </script>
+    <script src="{{ url_for(".static", filename="assets/plugins/jsColor/jscolor.js") }}"></script>
+    <script src="{{ url_for(".static", filename="assets/plugins/collagePlus/jquery.collagePlus.min.js") }}"></script>
+    <script src="{{ url_for(".static", filename="assets/plugins/collagePlus/extras/jquery.removeWhitespace.min.js") }}"></script>
+    <script src="{{ url_for(".static", filename="assets/plugins/collagePlus/extras/jquery.collageCaption.min.js") }}"></script>
+    <script src="{{ url_for(".static", filename="assets/plugins/handlebars/handlebars.min-latest.js") }}"></script>
+    <script src="{{ url_for(".static", filename="assets/plugins/auto-complete/auto-complete.min.js") }}"></script>
+    <script src="{{ url_for(".static", filename="assets/js/autocomplete.js") }}"></script>
+    <script src="{{ url_for(".static", filename="assets/js/search_results.js") }}"></script>
+    <script src="{{ url_for(".static", filename="assets/js/lightbox.js") }}"></script>
+{% endblock %}
+

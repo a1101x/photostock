@@ -1,0 +1,539 @@
+.profile-section {
+    margin-top: 33px;
+    min-height: 500px;
+    margin-bottom: 33px;
+}
+
+.profile-section h4 {
+    margin-top: 29px;
+    font-size: 17px;
+}
+
+.profile-section h1 {
+    margin-top: 26px;
+    font-size: 30px;
+}
+
+.profile-section .updated {
+    background-color: #e4f4e0;
+    border: 1px solid #adda9f;
+    height: 39px;
+    border-radius: 2px;
+    color: #333333;
+    padding: 8px 0 0 21px;
+}
+
+.profile-section .purchase-history table {
+    margin-top: 29px;
+    width: 700px;
+}
+
+.profile-section input.form-control {
+    width: 276px;
+}
+
+.profile-section .profile-earning .red-button {
+    width: 100%;
+    margin: 0;
+}
+
+.profile-section .profile-earning table {
+    margin-bottom: 17px;
+    background-color: #f3f3f3;
+    width: 100%;
+    color: #696969;
+}
+
+/*.profile-section .profile-earning table tr td:nth-child(2) {*/
+/*border-right: 1px solid #696969;*/
+/*}*/
+
+.profile-section .profile-earning table tr td:first-child {
+    font-size: 24px;
+    background-color: #fff;
+}
+
+.profile-section .profile-preferences .jq-selectbox__trigger {
+    display: none;
+}
+
+.profile-section .profile-preferences .jq-selectbox__select {
+    background: url("../img/order-summary/arrows.png") no-repeat 93% 49%;
+    -moz-box-shadow: inset 5px 0 10px -5px #b6b6b6, inset -5px 0 10px -5px #b6b6b6;
+    -webkit-box-shadow: inset 5px 0 10px -5px #b6b6b6, inset -5px 0 10px -5px #b6b6b6;
+    box-shadow: inset 5px 0 10px -5px #b6b6b6, inset -5px 0 10px -5px #b6b6b6;
+    height: 32px;
+    padding: 0 45px 0 10px;
+    border: 1px solid #CCC;
+    border-bottom-color: #B3B3B3;
+    border-radius: 4px;
+    background: #F5F5F5;
+    background: -webkit-linear-gradient(#FFF, #E6E6E6);
+    background: linear-gradient(#FFF, #E6E6E6);
+    font: 14px/32px Arial, sans-serif;
+    color: #333;
+    text-shadow: 1px 1px #FFF;
+}
+
+.profile-section .profile-preferences ul {
+    margin-left: 3px;
+}
+
+/* SQUARED THREE */
+
+.profile-section .profile-preferences input[type=checkbox] {
+    visibility: hidden;
+}
+
+.squaredThree {
+    width: 20px;
+    margin: 20px auto;
+    position: relative;
+}
+
+.squaredThree label {
+    cursor: pointer;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 1px;
+    left: -2px;
+    border-radius: 4px;
+    background-color: #2591ff;
+    /*-webkit-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,.4);*/
+    /*-moz-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,.4);*/
+    /*box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,.4);*/
+
+    /*background: -webkit-linear-gradient(top, #222 0%, #45484d 100%);*/
+    /*background: -moz-linear-gradient(top, #222 0%, #45484d 100%);*/
+    /*background: -o-linear-gradient(top, #222 0%, #45484d 100%);*/
+    /*background: -ms-linear-gradient(top, #222 0%, #45484d 100%);*/
+    /*background: linear-gradient(top, #222 0%, #45484d 100%);*/
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#222', endColorstr='#45484d', GradientType=0);
+}
+
+.squaredThree label:after {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
+    content: '';
+    position: absolute;
+    width: 9px;
+    height: 5px;
+    background: transparent;
+    top: 4px;
+    left: 3px;
+    border: 3px solid #fcfff4;
+    border-top: none;
+    border-right: none;
+
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.squaredThree label:hover::after {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+    filter: alpha(opacity=30);
+    opacity: 0.3;
+}
+
+.squaredThree input[type=checkbox]:checked + label:after {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    opacity: 1;
+}
+
+.profile-section .purchase-history table tr:first-child {
+    height: 38px;
+    background-color: #fbfbfb;
+}
+
+.total-summary {
+    background-color: #fbfbfb;
+}
+
+.profile-section .purchase-history table tr td:first-child, .profile-section .purchase-history table tr th:first-child {
+    padding-left: 9px;
+}
+
+.profile-section .purchase-history table tr {
+    height: 48px;
+    border-top: 1px solid #ddd;
+}
+
+.profile-section .profile-billing .vat-table {
+    margin-top: 24px;
+    width: 437px;
+}
+
+.profile-section .profile-billing .vat-table tr:nth-child(2) {
+    color: #b94a48;
+}
+
+.profile-section .profile-billing .vat-table tr {
+    height: 27px;
+}
+
+.profile-section .profile-billing ul li:last-child {
+    padding: 12px 0px 7px;
+}
+
+.profile-section .profile-billing .profile-title:nth-of-type(2) {
+    margin-top: 45px;
+}
+
+.profile-section .billing-payment-method {
+    width: 100%;
+}
+
+.profile-section .profile-table tr {
+    border-top: 1px solid #dddddd;
+    padding: 8px 8px;
+}
+
+.profile-section .profile-table tr td:last-child {
+    text-align: right;
+}
+
+.profile-section .profile-table tr td {
+    height: 35px;
+    padding: 8px 8px;
+}
+
+.profile-section .profile-table {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.profile-section p.profile-title {
+    border-bottom: 1px solid #e5e5e5;
+    font-weight: 700;
+    margin-top: 21px;
+    margin-bottom: 13px;
+    font-size: 15px;
+    padding-bottom: 7px;
+}
+
+.profile-section .profile-plans p:not(.profile-title) {
+    margin-bottom: 0;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.profile-section .earnings-info-dropdown .total {
+    text-transform: uppercase;
+    font-size: 26px;
+    margin-top: 14px;
+}
+
+.profile-section .earnings-info-dropdown ul {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #fff;
+}
+
+.profile-section .earnings-info-dropdown {
+    padding: 30px 0;
+    color: #fff;
+    position: absolute;
+    width: 100%;
+    left: 0;
+}
+
+.profile-section .profile-earning .result-info-wrapper {
+    height: 390px;
+    /*display: none;*/
+}
+
+.profile-section .profile-earning {
+    position: relative;
+}
+
+.profile-section #profile table tr {
+    width: 202px;
+    height: 35px;
+    border-bottom: 1px solid #dddddd;
+    border-top: 1px solid #dddddd;
+}
+
+.profile-section #profile table tr td:first-child {
+    padding-left: 10px;
+    font-weight: 700;
+}
+
+.profile-section #profile table tr td:last-child {
+    padding-right: 10px;
+    text-align: right;
+}
+
+.profile-section span.arrow-down, .profile-section span.arrow-up {
+    float: right;
+    color: #1dc4ff;
+    display: none;
+}
+
+.profile-section .same-block {
+    margin-bottom: 20px;
+}
+
+.profile-section .same-block .square {
+    cursor: pointer;
+}
+
+@media (min-width: 992px) {
+
+    .profile-section .same-block {
+        width: 20%;
+    }
+}
+
+.profile-section .profile-earning .same-block p {
+    font-size: 10px;
+    margin-bottom: 0;
+}
+
+.profile-section .image-preview {
+    height: 300px;
+}
+
+.profile-section .result-info .description-close:before {
+    content: "×";
+}
+
+.profile-section .result-info .description-close {
+    float: right;
+    position: absolute;
+    top: 18px;
+    right: 0;
+    cursor: pointer;
+    font-size: 30px;
+    color: #9a9a9a;
+    display: inline-block;
+    line-height: 0px;
+    padding: 15px 10px;
+    z-index: 10;
+}
+
+.profile-section .results-pagination {
+    background-color: #efefef;
+}
+
+.pagination-pages form {
+    display: inline;
+}
+
+.profile-section .pagination-pages input {
+    border: 1px solid #cecece;
+    text-align: center;
+    border-top-width: 2px;
+    height: 22px;
+    width: 20px;
+}
+
+.profile-section .results-pagination .tabs-pagintaion {
+    background-color: #efefef;
+    height: 28px;
+}
+
+.profile-section .pagination-pages a:nth-of-type(1) {
+    border-radius: 3px 0 0 3px;
+    border-right: none;
+}
+
+.profile-section .pagination-buttons a {
+    color: #fff;
+    height: 45px;
+    width: 20%;
+    line-height: 40px;
+    display: inline-block;
+}
+
+.profile-section .pagination-buttons {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.profile-section .related-tags {
+    padding-right: 33px;
+    text-align: right;
+}
+
+.profile-section input::-webkit-outer-spin-button,
+.profile-section input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+.profile-section .pagination-pages a:nth-of-type(2) {
+    border-radius: 3px;
+    margin-left: -5px;
+}
+
+.profile-section .pagination-pages a.empty:nth-of-type(1):before,
+.profile-section .pagination-pages a.empty:nth-of-type(2):before {
+    color: #ccc;
+}
+
+.profile-section input[type="reset"]{
+    line-height: 10px;
+    display: block;
+    color: #63666b;
+    margin: 7px 15px 0 0;
+    font-weight: 900;
+    height: 27px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    background: #ffffff;
+    background: -moz-linear-gradient(top, #ffffff 0%, #e3e3e3 100%);
+    background: -webkit-linear-gradient(top, #ffffff 0%, #e3e3e3 100%);
+    background: linear-gradient(to bottom, #ffffff 0%, #e3e3e3 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e3e3e3', GradientType=0);
+}
+
+.profile-section .pagination-pages a {
+    text-align: center;
+    line-height: 21px;
+    vertical-align: top;
+    box-shadow: 0px 1px 0px #ffffff inset;
+    color: #666666;
+    border-top-width: 2px;
+    display: inline-block;
+    height: 22px;
+    width: 25px;
+    border: 1px solid #d3d3d3;
+    background: #e4e4e4; /* Old browsers */
+    background: -moz-linear-gradient(top, #e4e4e4 0%, #ffffff 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #e4e4e4 0%, #ffffff 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #e4e4e4 0%, #ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e4e4e4', endColorstr='#ffffff', GradientType=0); /* IE6-9 */
+}
+
+.profile-section .counter-related {
+    margin-top: 13px;
+    margin-bottom: 8px;
+}
+
+.profile-section .counter-related > div span:last-child {
+    color: #a7a6a6;
+}
+
+.profile-section .buttom-tabs-pagintaion {
+    background-color: #efefef;
+    height: 28px;
+    margin-bottom: 47px;
+}
+
+.profile-section .pagination-pages {
+    padding-right: 6px;
+    color: #62636d;
+    padding-top: 3px;
+    text-align: right;
+}
+
+.profile-section .results-pagination .tabs-pagintaion .nav-tabs {
+    border-bottom: none;
+}
+
+.profile-section .results-pagination .tabs-pagintaion .nav-tabs li a {
+    padding: 3px 10px;
+    margin-right: 0;
+}
+
+.profile-section .results-pagination .tabs-pagintaion .nav-tabs li {
+    position: relative;
+    font-weight: 600;
+}
+
+.profile-section .results-pagination .tabs-pagintaion .nav-tabs li.active + li:after {
+    display: none;
+}
+
+.profile-section .results-pagination .tabs-pagintaion .nav-tabs li:not(.active):after {
+    height: 12px;
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 9px;
+    width: 1px;
+    background: #c9ccda;
+    border-right: 1px white;
+    content: '';
+}
+
+.profile-section .results-pagination .tabs-pagintaion .nav-tabs li:first-child:after {
+    display: none;
+}
+
+.profile-section .earnings_tabs {
+    margin: 0 0 10px;
+}
+
+#paymentBankPopUp .modal-dialog,
+#paymentPopUp .modal-dialog {
+    width: 300px;
+}
+#paymentBankPopUp .modal-dialog button,
+#paymentPopUp .modal-dialog button {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.filter_select {
+    text-align: left;
+}
+
+@media (max-width: 992px) {
+    .profile-section .purchase-history table {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .profile-section span.arrow-down {
+        display: block;
+    }
+
+    .profile-section h4 {
+        padding: 20px;
+        margin: 0 -15px;
+        color: #fff;
+        background-color: #64676b;
+        border-bottom: 1px solid #fff;
+    }
+
+    .profile-section .left-menu > li, .profile-section .left-menu > li a {
+        line-height: 28px;
+        height: 50px;
+    }
+
+    .profile-section .left-menu {
+        -webkit-box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.75);
+        box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.75);
+        display: none;
+        margin-left: -15px;
+        margin-right: -15px;
+        border-left: none;
+        border-right: none;
+        position: absolute;
+        border-radius: 0;
+        width: 100%;
+        background-color: #fff;
+        z-index: 1;
+    }
+
+    .profile-section {
+        margin-top: 0;
+    }
+}
+
+.earnings-summ {
+    white-space: nowrap;
+    padding: 0 10px 0 0;
+    text-align: right;
+}

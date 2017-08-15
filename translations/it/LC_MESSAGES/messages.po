@@ -1,0 +1,1162 @@
+# Italian translations for PROJECT.
+# Copyright (C) 2016 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2016-12-12 15:08+0200\n"
+"PO-Revision-Date: 2016-12-12 15:18+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: it\n"
+"Language-Team: it <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: app/decorators.py:43
+msgid "ALREADY_ADDED"
+msgstr ""
+
+#: app/decorators.py:48
+msgid "Account with this email already exists"
+msgstr ""
+
+#: app/decorators.py:53 app/decorators.py:63 app/decorators.py:75
+msgid "User does not exist"
+msgstr ""
+
+#: app/decorators.py:58 app/decorators.py:69
+msgid "Invalid password"
+msgstr ""
+
+#: app/forms.py:12 app/forms.py:19 templates/index.html:101
+#: templates/password_recover.html:17
+msgid "Email Address"
+msgstr ""
+
+#: app/forms.py:13 app/forms.py:21 templates/base.html:90
+#: templates/index.html:106 templates/login.html:20
+#: templates/profile_preferences.html:25
+msgid "Password"
+msgstr ""
+
+#: app/forms.py:14 templates/base.html:107 templates/login.html:12
+#: templates/search.html:193
+msgid "Sign In"
+msgstr ""
+
+#: app/forms.py:18 templates/index.html:96
+#: templates/profile_preferences.html:20
+msgid "Username"
+msgstr ""
+
+#: app/forms.py:23
+msgid "Confirm Password"
+msgstr ""
+
+#: app/forms.py:24
+msgid "Create Account"
+msgstr ""
+
+#: app/forms.py:28
+msgid ""
+"Enter your email address below and we'll send you a link to reset your "
+"password"
+msgstr ""
+
+#: app/forms.py:31
+msgid "Send Reset Link"
+msgstr ""
+
+#: app/forms.py:38
+msgid "Find..."
+msgstr ""
+
+#: app/forms.py:54
+msgid "1 - January"
+msgstr ""
+
+#: app/forms.py:55
+msgid "2 - February"
+msgstr ""
+
+#: app/forms.py:56
+msgid "3 - March"
+msgstr ""
+
+#: app/forms.py:57
+msgid "4 - April"
+msgstr ""
+
+#: app/forms.py:58
+msgid "5 - May"
+msgstr ""
+
+#: app/forms.py:59
+msgid "6 - June"
+msgstr ""
+
+#: app/forms.py:60
+msgid "7 - July"
+msgstr ""
+
+#: app/forms.py:61
+msgid "8 - August"
+msgstr ""
+
+#: app/forms.py:62
+msgid "9 - September"
+msgstr ""
+
+#: app/forms.py:63
+msgid "10 - October"
+msgstr ""
+
+#: app/forms.py:64
+msgid "11 - November"
+msgstr ""
+
+#: app/forms.py:65
+msgid "12 - December"
+msgstr ""
+
+#: app/forms.py:66
+msgid "Credit Card Number"
+msgstr ""
+
+#: app/forms.py:68
+msgid "Expiration Date"
+msgstr ""
+
+#: app/forms.py:72
+msgid "Security Code"
+msgstr ""
+
+#: app/forms.py:74 app/forms.py:87 app/forms.py:100 app/forms.py:107
+#: app/forms.py:133 app/forms.py:141
+#: templates/profile_billing_change_address.html:45
+#: templates/profile_preferences.html:64
+msgid "Save Changes"
+msgstr ""
+
+#: app/forms.py:79
+msgid "First Name"
+msgstr ""
+
+#: app/forms.py:80
+msgid "Last Name"
+msgstr ""
+
+#: app/forms.py:81
+msgid "Company"
+msgstr ""
+
+#: app/forms.py:82
+msgid "Street Address"
+msgstr ""
+
+#: app/forms.py:83
+msgid "City"
+msgstr ""
+
+#: app/forms.py:84
+msgid "State"
+msgstr ""
+
+#: app/forms.py:85
+msgid "Postal Code"
+msgstr ""
+
+#: app/forms.py:91
+msgid "Process Order >"
+msgstr ""
+
+#: app/forms.py:95
+msgid "Current Password"
+msgstr ""
+
+#: app/forms.py:96
+msgid "New Password"
+msgstr ""
+
+#: app/forms.py:98
+msgid "Confirm New Password"
+msgstr ""
+
+#: app/forms.py:104
+msgid "New Email"
+msgstr ""
+
+#: app/forms.py:105
+msgid "Confirm New Email"
+msgstr ""
+
+#: app/forms.py:117
+msgid ""
+"Design inspiration, tutorial and                             "
+"professionally curated content"
+msgstr ""
+
+#: app/forms.py:120
+msgid "Special offers and amazing deals"
+msgstr ""
+
+#: app/forms.py:122
+msgid "Product education and updates"
+msgstr ""
+
+#: app/forms.py:130
+msgid "Name on your account"
+msgstr ""
+
+#: app/forms.py:131
+msgid "Email assosiated to the Netteler account"
+msgstr ""
+
+#: app/forms.py:138
+msgid "Name and surname on your account"
+msgstr ""
+
+#: app/forms.py:140
+msgid "IBAN"
+msgstr ""
+
+#: app/forms.py:146
+msgid "Name"
+msgstr ""
+
+#: app/forms.py:148
+msgid "E-mail"
+msgstr ""
+
+#: app/forms.py:149
+msgid "Message"
+msgstr ""
+
+#: app/forms.py:150
+msgid "Submit"
+msgstr ""
+
+#: app/views.py:443
+msgid "Standart License"
+msgstr ""
+
+#: app/views.py:444
+msgid "Professional license"
+msgstr ""
+
+#: app/views.py:447
+msgid "30-day Subscription"
+msgstr ""
+
+#: app/views.py:448
+msgid "365-day Subscription"
+msgstr ""
+
+#: app/views.py:635 app/views.py:670
+msgid "Withdrawal from photostockStock"
+msgstr ""
+
+#: app/views.py:745
+msgid "personal"
+msgstr ""
+
+#: app/views.py:981
+msgid "Basic License"
+msgstr ""
+
+#: app/views.py:982 templates/pricing.html:60
+msgid "Professional License"
+msgstr ""
+
+#: templates/base.html:62
+msgid "Toggle navigation"
+msgstr ""
+
+#: templates/base.html:75 templates/base.html:104 templates/base.html:125
+msgid "Pricing"
+msgstr ""
+
+#: templates/base.html:80
+msgid "Sign in"
+msgstr ""
+
+#: templates/base.html:83 templates/register.html:51
+msgid "Already have an account?"
+msgstr ""
+
+#: templates/base.html:87 templates/image-details.html:120
+#: templates/login.html:16 templates/profile_preferences.html:30
+msgid "Email"
+msgstr ""
+
+#: templates/base.html:93 templates/login.html:24 templates/register.html:66
+msgid "Forgot your password?"
+msgstr ""
+
+#: templates/base.html:98
+msgid "Not Registered?"
+msgstr ""
+
+#: templates/base.html:99 templates/login.html:27
+msgid "Create a Free Browse Account"
+msgstr ""
+
+#: templates/base.html:110
+msgid "Join"
+msgstr ""
+
+#: templates/base.html:114
+msgid "Hi"
+msgstr ""
+
+#: templates/base.html:117 templates/base.html:128
+msgid "Lightboxes"
+msgstr ""
+
+#: templates/base.html:118
+msgid "Account Details"
+msgstr ""
+
+#: templates/base.html:119 templates/base.html:134
+#: templates/download-history.html:10
+msgid "Download History"
+msgstr ""
+
+#: templates/base.html:120 templates/base.html:149
+msgid "Sign Out"
+msgstr ""
+
+#: templates/base.html:131
+msgid "Account settings"
+msgstr ""
+
+#: templates/base.html:137 templates/base_profile.html:12
+#: templates/profile_plans.html:5
+msgid "Plans"
+msgstr ""
+
+#: templates/base.html:140 templates/base_profile.html:13
+msgid "Billing"
+msgstr ""
+
+#: templates/base.html:143
+msgid "Purchase history"
+msgstr ""
+
+#: templates/base.html:146 templates/base_profile.html:15
+#: templates/profile_earnings.html:11
+msgid "Earnings"
+msgstr ""
+
+#: templates/base.html:172
+msgid "Help"
+msgstr ""
+
+#: templates/base.html:175 templates/contact_us.html:9
+msgid "Contact us"
+msgstr ""
+
+#: templates/base.html:178
+msgid "Follow Us"
+msgstr ""
+
+#: templates/base.html:203
+msgid "Select a language"
+msgstr ""
+
+#: templates/base.html:206
+msgid "English"
+msgstr ""
+
+#: templates/base.html:213
+msgid "Legal"
+msgstr ""
+
+#: templates/base.html:216 templates/index.html:114 templates/register.html:41
+msgid "Website Terms of Use"
+msgstr ""
+
+#: templates/base.html:219 templates/index.html:115 templates/register.html:42
+#: templates/terms_of_use.html:31 templates/terms_of_use.html:961
+msgid "Privacy Policy"
+msgstr ""
+
+#: templates/base.html:227
+msgid "&copy; 2016 photostock, Inc - All rights reserved"
+msgstr ""
+
+#: templates/base_profile.html:9
+msgid "Your Account "
+msgstr ""
+
+#: templates/base_profile.html:11 templates/profile_preferences.html:5
+msgid "Account Settings"
+msgstr ""
+
+#: templates/base_profile.html:14 templates/profile_purchase_history.html:5
+msgid "Purchase History"
+msgstr ""
+
+#: templates/base_search.html:8 templates/base_search_wrapped.html:8
+msgid "Search your perfect photos"
+msgstr ""
+
+#: templates/base_search.html:15
+msgid "Orientation"
+msgstr ""
+
+#: templates/base_search.html:18 templates/base_search_wrapped.html:18
+msgid "Horizontal"
+msgstr ""
+
+#: templates/base_search.html:20 templates/base_search_wrapped.html:20
+msgid "Vertical"
+msgstr ""
+
+#: templates/base_search.html:24 templates/base_search_wrapped.html:24
+msgid "Exclude Keywords"
+msgstr ""
+
+#: templates/base_search.html:25
+msgid "Not These Words"
+msgstr ""
+
+#: templates/base_search.html:28 templates/base_search_wrapped.html:28
+msgid "Cotributor Name"
+msgstr ""
+
+#: templates/base_search.html:35 templates/base_search_wrapped.html:35
+msgid "Only Images With People"
+msgstr ""
+
+#: templates/base_search.html:37 templates/base_search_wrapped.html:37
+msgid "Exclude People"
+msgstr ""
+
+#: templates/base_search.html:41 templates/base_search_wrapped.html:41
+msgid "Color"
+msgstr ""
+
+#: templates/base_search.html:61
+msgid "Portfolio of"
+msgstr ""
+
+#: templates/download-history.html:14 templates/profile_earnings.html:178
+#: templates/search.html:12 templates/search.html:55 templates/search.html:96
+msgid "Page"
+msgstr ""
+
+#: templates/download-history.html:34
+msgid "License Type"
+msgstr ""
+
+#: templates/download-history.html:35
+msgid "Professional"
+msgstr ""
+
+#: templates/download-history.html:36 templates/pricing.html:26
+msgid "Basic"
+msgstr ""
+
+#: templates/download-history.html:39 templates/pricing.html:64
+msgid "Year"
+msgstr ""
+
+#: templates/download-history.html:58
+msgid "Redownload"
+msgstr ""
+
+#: templates/image-details.html:17 templates/image-details.html:20
+#: templates/image-details.html:82 templates/image-details.html:85
+#: templates/search.html:163 templates/search.html:166
+msgid "Save to a Lightbox"
+msgstr ""
+
+#: templates/image-details.html:33 templates/image-details.html:98
+#: templates/search.html:180
+msgid "New Lightbox"
+msgstr ""
+
+#: templates/image-details.html:34 templates/image-details.html:99
+#: templates/search.html:181
+msgid "Save"
+msgstr ""
+
+#: templates/image-details.html:39 templates/image-details.html:104
+msgid "Please Login..."
+msgstr ""
+
+#: templates/image-details.html:40 templates/image-details.html:105
+msgid ""
+"To organize photos in lightboxes you must first register or login. "
+"Registration is Free!  Lightbox allow you to categorize groups of photos "
+"and send them to your friends or colleagues"
+msgstr ""
+
+#: templates/image-details.html:42 templates/image-details.html:107
+msgid "Sign In &gt;"
+msgstr ""
+
+#: templates/image-details.html:43 templates/image-details.html:108
+msgid "Create an account &gt;"
+msgstr ""
+
+#: templates/image-details.html:55
+msgid "Image ID"
+msgstr ""
+
+#: templates/image-details.html:56 templates/profile_earnings.html:148
+#: templates/search.html:136
+msgid "Author"
+msgstr ""
+
+#: templates/image-details.html:58 templates/profile_earnings.html:151
+#: templates/search.html:139
+msgid "Copyrights owners"
+msgstr ""
+
+#: templates/image-details.html:64 templates/profile_earnings.html:154
+#: templates/search.html:142
+msgid "Keywords"
+msgstr ""
+
+#: templates/image-details.html:71 templates/profile_earnings.html:159
+#: templates/search.html:147
+msgid "Published"
+msgstr ""
+
+#: templates/image-details.html:72 templates/profile_earnings.html:44
+#: templates/profile_earnings.html:89 templates/profile_earnings.html:114
+#: templates/search.html:148
+msgid "Downloads"
+msgstr ""
+
+#: templates/image-details.html:77 templates/index.html:71
+#: templates/index.html:140 templates/search.html:161
+msgid "Download"
+msgstr ""
+
+#: templates/image-details.html:77 templates/index.html:84
+#: templates/index.html:153
+msgid "Buy"
+msgstr ""
+
+#: templates/image-details.html:115
+msgid "Share"
+msgstr ""
+
+#: templates/image-details.html:118
+msgid "Facebook"
+msgstr ""
+
+#: templates/image-details.html:119
+msgid "Twitter"
+msgstr ""
+
+#: templates/image-details.html:137
+msgid "Photographer"
+msgstr ""
+
+#: templates/image-details.html:142
+msgid "photos"
+msgstr ""
+
+#: templates/image-details.html:144
+msgid "Member since"
+msgstr ""
+
+#: templates/image-details.html:148
+msgid "Styles"
+msgstr ""
+
+#: templates/image-details.html:156
+msgid "Equipment"
+msgstr ""
+
+#: templates/image-details.html:167
+msgid "Same Artist"
+msgstr ""
+
+#: templates/image-details.html:168
+msgid "See all"
+msgstr ""
+
+#: templates/image-details.html:189 templates/search.html:212
+msgid "Similar Images"
+msgstr ""
+
+#: templates/index.html:10
+msgid "Find the perfect photos you are looking for..."
+msgstr ""
+
+#: templates/index.html:14
+msgid "How it works"
+msgstr ""
+
+#: templates/index.html:35
+msgid "All"
+msgstr ""
+
+#: templates/index.html:66 templates/index.html:135
+msgid "Free Photo of the Week"
+msgstr ""
+
+#: templates/index.html:79 templates/index.html:148
+msgid "Most downloaded of the Week"
+msgstr ""
+
+#: templates/index.html:91
+msgid "Sign up and get free content every week."
+msgstr ""
+
+#: templates/index.html:113 templates/register.html:40
+msgid "Before you wreck yourself"
+msgstr ""
+
+#: templates/index.html:114 templates/register.html:41
+msgid "I agree to photostock's"
+msgstr ""
+
+#: templates/index.html:114 templates/register.html:41
+msgid ","
+msgstr ""
+
+#: templates/index.html:115 templates/register.html:42
+msgid "to receive emails that I can opt out of at any time."
+msgstr ""
+
+#: templates/login.html:28 templates/profile_plans.html:16
+#: templates/profile_purchase_history.html:37
+msgid "View Plans & Pricing"
+msgstr ""
+
+#: templates/order-summary.html:12
+msgid "Order Summary"
+msgstr ""
+
+#: templates/order-summary.html:18
+msgid "Monthly Subscriptions"
+msgstr ""
+
+#: templates/order-summary.html:19
+msgid "Downloads per Month "
+msgstr ""
+
+#: templates/order-summary.html:24
+msgid "Choose another plan"
+msgstr ""
+
+#: templates/order-summary.html:25
+msgid "TOTAL"
+msgstr ""
+
+#: templates/order-summary.html:36
+msgid "Process Order &gt;"
+msgstr ""
+
+#: templates/password_recover.html:12
+msgid "Forgot Your Password?"
+msgstr ""
+
+#: templates/pricing.html:11
+msgid "Amazing Royalty-Free Images. Simple Pricing."
+msgstr ""
+
+#: templates/pricing.html:15
+msgid "Free Browse Account"
+msgstr ""
+
+#: templates/pricing.html:17
+msgid ""
+"Search our collection of over 70 million images. Create and share "
+"unlimited lightboxes."
+msgstr ""
+
+#: templates/pricing.html:18
+msgid "Start for Free"
+msgstr ""
+
+#: templates/pricing.html:28
+msgid "Image Packs"
+msgstr ""
+
+#: templates/pricing.html:35 templates/pricing.html:41
+msgid "Images"
+msgstr ""
+
+#: templates/pricing.html:49 templates/pricing.html:93
+#: templates/pricing.html:121
+msgid "You have this plan"
+msgstr ""
+
+#: templates/pricing.html:51 templates/pricing.html:95
+#: templates/pricing.html:123
+msgid "Buy Now"
+msgstr ""
+
+#: templates/pricing.html:53
+msgid "Images must be downloaded within one year of purchase"
+msgstr ""
+
+#: templates/pricing.html:62
+msgid "Get access to our entire collection with no daily download limits."
+msgstr ""
+
+#: templates/pricing.html:65
+msgid "Month"
+msgstr ""
+
+#: templates/pricing.html:70
+msgid "Images Per Year"
+msgstr ""
+
+#: templates/pricing.html:78 templates/pricing.html:85
+#: templates/pricing.html:107 templates/pricing.html:114
+msgid "images"
+msgstr ""
+
+#: templates/pricing.html:78 templates/pricing.html:85
+msgid "year"
+msgstr ""
+
+#: templates/pricing.html:100
+msgid "Images Per Month"
+msgstr ""
+
+#: templates/pricing.html:107 templates/pricing.html:114
+msgid "month"
+msgstr ""
+
+#: templates/profile_billing.html:6
+msgid "Image payment method"
+msgstr ""
+
+#: templates/profile_billing.html:23
+msgid "Change Payment Information"
+msgstr ""
+
+#: templates/profile_billing.html:27
+msgid "Billing Address"
+msgstr ""
+
+#: templates/profile_billing.html:34
+msgid "Change Billing Address"
+msgstr ""
+
+#: templates/profile_billing_change_address.html:5
+msgid "Change Your Billing Address"
+msgstr ""
+
+#: templates/profile_billing_change_address.html:19
+#: templates/profile_billing_change_address.html:31
+msgid "optional"
+msgstr ""
+
+#: templates/profile_billing_change_address.html:39
+msgid "Country:"
+msgstr ""
+
+#: templates/profile_billing_change_address.html:46
+#: templates/profile_billing_change_card.html:31
+#: templates/profile_change_bank_account.html:24
+#: templates/profile_change_email.html:24
+#: templates/profile_change_neteller.html:25
+#: templates/profile_change_password.html:27 templates/profile_earnings.html:99
+#: templates/profile_earnings.html:124
+msgid "Cancel"
+msgstr ""
+
+#: templates/profile_billing_change_card.html:5
+msgid "Change Your Card Settings"
+msgstr ""
+
+#: templates/profile_change_bank_account.html:7
+#: templates/profile_change_neteller.html:8
+msgid "Change Account where you get paid"
+msgstr ""
+
+#: templates/profile_change_bank_account.html:8
+msgid "Your Bank Account"
+msgstr ""
+
+#: templates/profile_change_bank_account.html:28
+msgid "Change your Payment method to Neteller"
+msgstr ""
+
+#: templates/profile_change_email.html:7 templates/profile_preferences.html:32
+msgid "Change Email Address"
+msgstr ""
+
+#: templates/profile_change_neteller.html:9
+msgid "Netteler Account"
+msgstr ""
+
+#: templates/profile_change_neteller.html:29
+msgid "Change your Payment method to Bank Transfer"
+msgstr ""
+
+#: templates/profile_change_password.html:7
+msgid "Change Password"
+msgstr ""
+
+#: templates/profile_earnings.html:14
+msgid "Grand total"
+msgstr ""
+
+#: templates/profile_earnings.html:15
+msgid "Still to cash in"
+msgstr ""
+
+#: templates/profile_earnings.html:19
+msgid "Withdraw money"
+msgstr ""
+
+#: templates/profile_earnings.html:31
+msgid "From photostock App (Rights)"
+msgstr ""
+
+#: templates/profile_earnings.html:32
+msgid "From photostock Stock (Royalties)"
+msgstr ""
+
+#: templates/profile_earnings.html:45
+msgid "Value per download"
+msgstr ""
+
+#: templates/profile_earnings.html:46 templates/profile_earnings.html:57
+msgid "VAT &amp; Free"
+msgstr ""
+
+#: templates/profile_earnings.html:55
+msgid "Shares sold"
+msgstr ""
+
+#: templates/profile_earnings.html:56
+msgid "Total value"
+msgstr ""
+
+#: templates/profile_earnings.html:71
+msgid "Previous Page"
+msgstr ""
+
+#: templates/profile_earnings.html:75 templates/search.html:46
+#: templates/search.html:91
+msgid "Next Page"
+msgstr ""
+
+#: templates/profile_earnings.html:87 templates/profile_earnings.html:112
+msgid "SUMMARY"
+msgstr ""
+
+#: templates/profile_earnings.html:90 templates/profile_earnings.html:115
+msgid "Rights"
+msgstr ""
+
+#: templates/profile_earnings.html:91 templates/profile_earnings.html:116
+msgid "Neteller fee"
+msgstr ""
+
+#: templates/profile_earnings.html:94 templates/profile_earnings.html:119
+msgid "Total to pay"
+msgstr ""
+
+#: templates/profile_earnings.html:95
+msgid "Confirm the payment on the Neteller Account"
+msgstr ""
+
+#: templates/profile_earnings.html:98 templates/profile_earnings.html:123
+msgid "Confirm"
+msgstr ""
+
+#: templates/profile_earnings.html:120
+msgid "Confirm the payment on the Bank Account?"
+msgstr ""
+
+#: templates/profile_earnings.html:147
+msgid "Image Id"
+msgstr ""
+
+#: templates/profile_earnings.html:162
+msgid "total"
+msgstr ""
+
+#: templates/profile_plans.html:6
+msgid "Image plans"
+msgstr ""
+
+#: templates/profile_plans.html:9
+msgid "Basic License Type"
+msgstr ""
+
+#: templates/profile_plans.html:11
+msgid "Professional License Type"
+msgstr ""
+
+#: templates/profile_plans.html:13
+msgid "downloads left"
+msgstr ""
+
+#: templates/profile_plans.html:15 templates/profile_purchase_history.html:35
+msgid "You don't have an active image plan"
+msgstr ""
+
+#: templates/profile_preferences.html:7
+msgid "Your password has been updated."
+msgstr ""
+
+#: templates/profile_preferences.html:10
+msgid "Your account has been updated."
+msgstr ""
+
+#: templates/profile_preferences.html:13
+msgid "Please, follow the link from email to continue."
+msgstr ""
+
+#: templates/profile_preferences.html:27
+msgid "Change password"
+msgstr ""
+
+#: templates/profile_preferences.html:37 templates/profile_preferences.html:42
+msgid "Change accout where to get paid"
+msgstr ""
+
+#: templates/profile_preferences.html:45
+msgid "Email preference"
+msgstr ""
+
+#: templates/profile_preferences.html:46
+msgid "What types of communication would you like to receive from photostock"
+msgstr ""
+
+#: templates/profile_purchase_history.html:15
+msgid "Date"
+msgstr ""
+
+#: templates/profile_purchase_history.html:16
+msgid "Description"
+msgstr ""
+
+#: templates/profile_purchase_history.html:17
+msgid "Total"
+msgstr ""
+
+#: templates/profile_purchase_history.html:18
+msgid "Receipt"
+msgstr ""
+
+#: templates/profile_purchase_history.html:25
+msgid "Repurchase Plan"
+msgstr ""
+
+#: templates/register.html:12
+msgid "Create your account."
+msgstr ""
+
+#: templates/search.html:34 templates/search.html:73
+msgid "Search result for tags"
+msgstr ""
+
+#: templates/search.html:52
+msgid "Sorted by:"
+msgstr ""
+
+#: templates/search.html:136
+msgid "Image ID:"
+msgstr ""
+
+#: templates/search.html:190
+msgid ""
+"To organize photos in lightboxes you must first register or login. "
+"Registration is Free! Lightbox allow you to categorize groups of photos "
+"and send them to your friends or colleagues."
+msgstr ""
+
+#: templates/search.html:194
+msgid "Create an account"
+msgstr ""
+
+#: templates/search.html:228 templates/search.html:245
+msgid "See All"
+msgstr ""
+
+#: templates/macros/popups.html:8
+msgid "Oh snap! You got an error!"
+msgstr ""
+
+#: templates/macros/popups.html:26
+msgid "Success!"
+msgstr ""
+
+#: venv/lib/python3.5/site-packages/flask_wtf/file.py:36
+#: venv/lib/python3.5/site-packages/wtforms/validators.py:203
+#: venv/lib/python3.5/site-packages/wtforms/validators.py:243
+msgid "This field is required."
+msgstr ""
+
+#: venv/lib/python3.5/site-packages/flask_wtf/form.py:110
+#: venv/lib/python3.5/site-packages/wtforms/csrf/session.py:61
+#: venv/lib/python3.5/site-packages/wtforms/ext/csrf/session.py:58
+msgid "CSRF token missing"
+msgstr ""
+
+#: venv/lib/python3.5/site-packages/wtforms/validators.py:56
+#, python-format
+msgid "Invalid field name '%s'."
+msgstr ""
+
+#: venv/lib/python3.5/site-packages/wtforms/validators.py:64
+#, python-format
+msgid "Field must be equal to %(other_name)s."
+msgstr ""
+
+#: venv/lib/python3.5/site-packages/wtforms/validators.py:97
+#, python-format
+msgid "Field must be at least %(min)d character long."
+msgid_plural "Field must be at least %(min)d characters long."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.5/site-packages/wtforms/validators.py:100
+#, python-format
+msgid "Field cannot be longer than %(max)d character."
+msgid_plural "Field cannot be longer than %(max)d characters."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.5/site-packages/wtforms/validators.py:103
+#, python-format
+msgid "Field must be between %(min)d and %(max)d characters long."
+msgstr ""
+
+#: venv/lib/python3.5/site-packages/wtforms/validators.py:139
+#, python-format
+msgid "Number must be at least %(min)s."
+msgstr ""
+
+#: venv/lib/python3.5/site-packages/wtforms/validators.py:141
+#, python-format
+msgid "Number must be at most %(max)s."
+msgstr ""
+
+#: venv/lib/python3.5/site-packages/wtforms/validators.py:143
+#, python-format
+msgid "Number must be between %(min)s and %(max)s."
+msgstr ""
+
+#: venv/lib/python3.5/site-packages/wtforms/validators.py:275
+msgid "Invalid input."
+msgstr ""
+
+#: venv/lib/python3.5/site-packages/wtforms/validators.py:301
+msgid "Invalid email address."
+msgstr ""
+
+#: venv/lib/python3.5/site-packages/wtforms/validators.py:335
+msgid "Invalid IP address."
+msgstr ""
+
+#: venv/lib/python3.5/site-packages/wtforms/validators.py:386
+msgid "Invalid Mac address."
+msgstr ""
+
+#: venv/lib/python3.5/site-packages/wtforms/validators.py:415
+msgid "Invalid URL."
+msgstr ""
+
+#: venv/lib/python3.5/site-packages/wtforms/validators.py:436
+msgid "Invalid UUID."
+msgstr ""
+
+#: venv/lib/python3.5/site-packages/wtforms/validators.py:464
+#, python-format
+msgid "Invalid value, must be one of: %(values)s."
+msgstr ""
+
+#: venv/lib/python3.5/site-packages/wtforms/validators.py:496
+#, python-format
+msgid "Invalid value, can't be any of: %(values)s."
+msgstr ""
+
+#: venv/lib/python3.5/site-packages/wtforms/csrf/core.py:98
+#: venv/lib/python3.5/site-packages/wtforms/ext/csrf/form.py:47
+msgid "Invalid CSRF Token"
+msgstr ""
+
+#: venv/lib/python3.5/site-packages/wtforms/csrf/session.py:69
+#: venv/lib/python3.5/site-packages/wtforms/ext/csrf/session.py:66
+msgid "CSRF failed"
+msgstr ""
+
+#: venv/lib/python3.5/site-packages/wtforms/csrf/session.py:74
+#: venv/lib/python3.5/site-packages/wtforms/ext/csrf/session.py:71
+msgid "CSRF token expired"
+msgstr ""
+
+#: venv/lib/python3.5/site-packages/wtforms/ext/appengine/fields.py:87
+#: venv/lib/python3.5/site-packages/wtforms/ext/appengine/fields.py:164
+#: venv/lib/python3.5/site-packages/wtforms/ext/appengine/fields.py:166
+#: venv/lib/python3.5/site-packages/wtforms/ext/django/fields.py:95
+#: venv/lib/python3.5/site-packages/wtforms/ext/sqlalchemy/fields.py:125
+#: venv/lib/python3.5/site-packages/wtforms/ext/sqlalchemy/fields.py:127
+#: venv/lib/python3.5/site-packages/wtforms/ext/sqlalchemy/fields.py:180
+#: venv/lib/python3.5/site-packages/wtforms/ext/sqlalchemy/fields.py:185
+#: venv/lib/python3.5/site-packages/wtforms/fields/core.py:472
+msgid "Not a valid choice"
+msgstr ""
+
+#: venv/lib/python3.5/site-packages/wtforms/ext/appengine/fields.py:185
+msgid "Not a valid list"
+msgstr ""
+
+#: venv/lib/python3.5/site-packages/wtforms/ext/appengine/fields.py:204
+msgid "Not a valid integer list"
+msgstr ""
+
+#: venv/lib/python3.5/site-packages/wtforms/ext/dateutil/fields.py:63
+msgid "Please input a date/time value"
+msgstr ""
+
+#: venv/lib/python3.5/site-packages/wtforms/ext/dateutil/fields.py:75
+#: venv/lib/python3.5/site-packages/wtforms/ext/dateutil/fields.py:83
+msgid "Invalid date/time input"
+msgstr ""
+
+#: venv/lib/python3.5/site-packages/wtforms/fields/core.py:465
+msgid "Invalid Choice: could not coerce"
+msgstr ""
+
+#: venv/lib/python3.5/site-packages/wtforms/fields/core.py:498
+msgid "Invalid choice(s): one or more data inputs could not be coerced"
+msgstr ""
+
+#: venv/lib/python3.5/site-packages/wtforms/fields/core.py:505
+#, python-format
+msgid "'%(value)s' is not a valid choice for this field"
+msgstr ""
+
+#: venv/lib/python3.5/site-packages/wtforms/fields/core.py:588
+msgid "Not a valid integer value"
+msgstr ""
+
+#: venv/lib/python3.5/site-packages/wtforms/fields/core.py:654
+msgid "Not a valid decimal value"
+msgstr ""
+
+#: venv/lib/python3.5/site-packages/wtforms/fields/core.py:681
+msgid "Not a valid float value"
+msgstr ""
+
+#: venv/lib/python3.5/site-packages/wtforms/fields/core.py:742
+msgid "Not a valid datetime value"
+msgstr ""
+
+#: venv/lib/python3.5/site-packages/wtforms/fields/core.py:759
+msgid "Not a valid date value"
+msgstr ""
+

@@ -1,0 +1,31 @@
+{% macro popup_error(err_list) %}
+
+    {% if err_list and config.DEBUG %}
+        <div id="error_alert" class="alert alert-danger alert-dismissible fade in" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button>
+            <h4>{{ _("Oh snap! You got an error!") }}</h4>
+            <ol>
+                {% for error in err_list %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ol>
+        </div>
+    {% endif %}
+
+{% endmacro %}
+
+{% macro popup_success(message) %}
+
+    {% if message %}
+        <div id="error_alert" class="alert alert-success alert-dismissible fade in" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button>
+            <h4>{{ _("Success!") }}</h4>
+            {{ message }}
+        </div>
+    {% endif %}
+
+{% endmacro %}

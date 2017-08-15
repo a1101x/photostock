@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block search_form %}
+    <div class="results-search">
+        <div class="col-lg-8 col-md-8 col-xs-12 col-sm-12">
+            <form class="search-block" action="{{ url_for('SearchView:search_results', lang_code=g.current_lang, author=g.author) }}" method="post">
+                {{ g.search_form.csrf_token }}
+                {{ g.search_form.keyword(placeholder=_("Search your perfect photos")) }}
+                {{ g.search_form.quick_search_btn(class_="pagination-pages grey-button") }}
+                <div class="clearfix"></div>
+            </form>
+            <div class="search-filters">
+               <form class="filters_dropdown">
+                    <div class="form-group ">
+                        <label>{{ _("Orientation") }}</label>
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" name="cookie" id="horizontal">
+                            <label for="horizontal"><span></span>{{ _("Horizontal") }}</label><br>
+                            <input type="checkbox" name="cookie" id="vertical">
+                            <label for="vertical"><span></span>{{ _("Vertical") }}</label>
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <label for="exclude">{{ _("Exclude Keywords") }}</label>
+                        <input id="exclude" type="text" name="surname" class="form-control" placeholder="{{ _("Not These Words") }}">
+                    </div>
+                       <div class="form-group ">
+                        <label for="cotributor">{{ _("Cotributor Name") }}</label>
+                        <input id="cotributor" type="text" name="surname" class="form-control">
+                    </div>
+                   <div class="form-group ">
+                        <label>People</label>
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" name="cookie" id="with-people">
+                            <label for="with-people"><span></span>{{ _("Only Images With People") }}</label><br>
+                            <input type="checkbox" name="cookie" id="without-people">
+                            <label for="without-people"><span></span>{{ _("Exclude People") }}</label>
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <label for="color">{{ _("Color") }}</label>
+                        <div class="color-wrapper">
+                            <input id="color" value="" maxlength="6">
+                        </div>
+                        <button id="color-select" class="jscolor
+                            {valueElement:'color',required:false}">
+                        </button>
+
+                    </div>
+                   <div class="form-group form-buttons">
+                        <input class="grey-button" type="submit" value="Search">
+                        <input class="" type="reset" value="Clear">
+                   </div>
+                </form>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-xs-12 col-sm-12">
+            {% if request.args.author and g.img_list %}
+            <p>{{ _("Portfolio of") }}: <strong>{{ g.img_list[0].userFullName }}</strong></p>
+            {% endif %}
+        </div>
+        <div class="clearfix"></div>
+    </div>
+{% endblock search_form %}
+
+{% block content %} {% endblock content %}
+
+{% block scripts_under_content %}
+    <script src="{{ url_for(".static", filename="assets/plugins/jsColor/jscolor.js") }}"></script>
+{% endblock scripts_under_content %}

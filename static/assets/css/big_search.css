@@ -1,0 +1,142 @@
+.big-search-section {
+    position: relative;
+}
+
+.big-search-section .big-search-bg {
+    height: 535px;
+    /*background-image: url(../img/welcome-page/Skate.png);*/
+    /*background-repeat: no-repeat;*/
+    /*background-size: cover;*/
+    /*background-position: 50% 50%;*/
+    background: url(../img/welcome-page/City.jpg) no-repeat 50% 50% / cover;
+}
+
+.big-search-section .slogan {
+    text-align: center;
+    background-color: #1dc4ff;
+    border-top: 1px solid #56aec4;
+    border-bottom: 1px solid #0c0e0d;
+}
+
+.big-search-section .slogan p {
+    margin-top: 27px;
+    margin-bottom: 23px;
+    color: #fff;
+    font-size: 29px;
+}
+
+.big-search-section .how-it-works {
+    margin-top: 28px;
+    color: #fff;
+    padding-top: 11px;
+    background-color: #1dc4ff;
+    text-align: center;
+    margin-left: 11.5%;
+    height: 56px;
+    width: 218px;
+    text-transform: uppercase;
+    font-size: 22px;
+    border-radius: 5px;
+}
+
+.big-search-section .big-search-block {
+    background-color: #fbfdfc;
+    width: 77%;
+    height: 74px;
+    margin: 232px auto 0;
+    border-radius: 5px;
+}
+
+[placeholder] {
+    text-overflow: ellipsis;
+}
+
+.big-search-section .big-search-block .search-field {
+    background: url("../img/welcome-page/loop.png") no-repeat 39px 17px;
+    height: 68px;
+    width: 100%;
+    border: none;
+    font-size: 18px;
+    padding: 5px 5px 0 117px;
+    outline: none;
+}
+
+@media (max-width: 992px) {
+
+    .big-search-section .big-search-block .search-field {
+        font-size: 15px;
+        background: url("../img/welcome-page/loop.png") no-repeat 12px 21px / 30px;
+        padding: 5px 5px 0 50px;
+    }
+
+}
+
+.big-search-section .grey-button {
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+    .big-search-section .big-search-block .search-loop {
+        background-position: 58% 25px;
+        background-size: 24px;
+    }
+
+    .big-search-section .big-search-block {
+        height: 43px;
+        width: 100%;
+    }
+
+    .big-search-section .big-search-block .search-field {
+        width: 89%;
+    }
+
+    .big-search-section form input[type="submit"] {
+        display: inline-block;
+        margin: 0;
+        border-style: solid;
+        width: 10%;
+        border-width: 1px;
+        outline: none;
+        background: url("../../assets/img/search-results/loop-black.png") no-repeat center center;
+        border-left: none;
+        border-color: #fff;
+        box-shadow: none;
+        height: 43px;
+    }
+
+    .big-search-section .big-search-block .search-field {
+        height: 43px;
+        background: none;
+        padding: 5px 10px;
+    }
+
+    .big-search-section .how-it-works {
+        display: none;
+    }
+
+    .big-search-section .big-search-block {
+        margin: 0 !important;
+    }
+
+    .big-search-section .big-search-bg {
+        height: auto;
+        padding: 5px 10px;
+        background: #ebebeb;
+    }
+
+    .big-search-section .slogan {
+        /*position: absolute;*/
+        /*background-color: transparent;*/
+        border-bottom: none;
+        border-top: none;
+        top: 47px;
+    }
+
+    .big-search-section .slogan p {
+        color: #fff;
+        font-size: 17px;
+        line-height: 27px;
+        padding: 0 9%;
+    }
+}
